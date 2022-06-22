@@ -1,0 +1,1960 @@
+\hypertarget{ecmcEthercat_8h}{\section{/home/anderssandstrom/sources/e3-\/ecmc/ecmc/dev\-Ecmc\-Sup/ethercat/ecmc\-Ethercat.h File Reference}
+\label{ecmcEthercat_8h}\index{/home/anderssandstrom/sources/e3-\/ecmc/ecmc/dev\-Ecmc\-Sup/ethercat/ecmc\-Ethercat.\-h@{/home/anderssandstrom/sources/e3-\/ecmc/ecmc/dev\-Ecmc\-Sup/ethercat/ecmc\-Ethercat.\-h}}
+}
+
+
+Ether\-C\-A\-T commands.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{ecmcEthercat_8h_a38ff2b5757af196a894b555da655416c}{ec\-Set\-Master} (int master\-Index)
+\begin{DoxyCompactList}\small\item\em Selects Ether\-C\-A\-T master to use.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a124bcb84b719bb9bd104fcf3298faf96}{ec\-Reset\-Master} (int master\-Index)
+\begin{DoxyCompactList}\small\item\em Retry configuring slaves for an selected Ether\-C\-A\-T master.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a252ceff241a2859d83153028b60a2f7f}{ec\-Add\-Slave} (uint16\-\_\-t alias, uint16\-\_\-t position, uint32\-\_\-t vendor\-Id, uint32\-\_\-t product\-Code)
+\begin{DoxyCompactList}\small\item\em Adds an Ether\-C\-A\-T slave to the hardware configuration.\par
+. \end{DoxyCompactList}\item 
+\hypertarget{ecmcEthercat_8h_a4ee20b01cbca1271aec8f0724108947f}{int \hyperlink{ecmcEthercat_8h_a4ee20b01cbca1271aec8f0724108947f}{ec\-Add\-Sync\-Manager} (int slave\-Index, int direction, uint8\-\_\-t sync\-Manger\-Index)}\label{ecmcEthercat_8h_a4ee20b01cbca1271aec8f0724108947f}
+
+\begin{DoxyCompactList}\small\item\em obsolete command. Use \hyperlink{ecmcEthercat_8h_aefaf1bae717d2be0cc7a9a253453da2b}{ec\-Add\-Entry\-Complete()} command instead.\par
+\end{DoxyCompactList}\item 
+\hypertarget{ecmcEthercat_8h_ab5225a3eefb257732f6de5291bc578c1}{int \hyperlink{ecmcEthercat_8h_ab5225a3eefb257732f6de5291bc578c1}{ec\-Add\-Pdo} (int slave\-Index, int sync\-Manager, uint16\-\_\-t pdo\-Index)}\label{ecmcEthercat_8h_ab5225a3eefb257732f6de5291bc578c1}
+
+\begin{DoxyCompactList}\small\item\em obsolete command. Use \hyperlink{ecmcEthercat_8h_aefaf1bae717d2be0cc7a9a253453da2b}{ec\-Add\-Entry\-Complete()} command instead.\par
+\end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_aefaf1bae717d2be0cc7a9a253453da2b}{ec\-Add\-Entry\-Complete} (uint16\-\_\-t slave\-Bus\-Position, uint32\-\_\-t vendor\-Id, uint32\-\_\-t product\-Code, int direction, uint8\-\_\-t sync\-Manger\-Index, uint16\-\_\-t pdo\-Index, uint16\-\_\-t entry\-Index, uint8\-\_\-t entry\-Sub\-Index, uint8\-\_\-t bits, char $\ast$entry\-I\-D\-String, int signed\-Value)
+\item 
+int \hyperlink{ecmcEthercat_8h_a815f82ce155380d824595610e3ee534a}{ec\-Add\-Entry} (uint16\-\_\-t slave\-Bus\-Position, uint32\-\_\-t vendor\-Id, uint32\-\_\-t product\-Code, int direction, uint8\-\_\-t sync\-Manger\-Index, uint16\-\_\-t pdo\-Index, uint16\-\_\-t entry\-Index, uint8\-\_\-t entry\-Sub\-Index, char $\ast$datatype, char $\ast$entry\-I\-D\-String, int update\-In\-Real\-Time)
+\begin{DoxyCompactList}\small\item\em Adds an Ether\-C\-A\-T slave to the hardware configuration.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_afa3e3a674014a5b16bd6715338184b4e}{ec\-Add\-Mem\-Map\-D\-T} (char $\ast$ec\-Path, size\-\_\-t byte\-Size, int direction, char $\ast$data\-Type, char $\ast$mem\-Map\-I\-D\-String)
+\begin{DoxyCompactList}\small\item\em Adds a memory map object to access data directly from Ether\-C\-A\-T domain. This is the preferred syntax.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a739e72e2cc45dfbc7473c6728240a660}{ec\-Add\-Mem\-Map} (uint16\-\_\-t start\-Entry\-Bus\-Position, char $\ast$start\-Entry\-I\-D\-String, size\-\_\-t byte\-Size, int direction, char $\ast$mem\-Map\-I\-D\-String)
+\begin{DoxyCompactList}\small\item\em Adds a memory map object to access data directly from Ether\-C\-A\-T\par
+ domain. Support for this syntax might be dropped in newer releases.\par
+ Please use new syntax.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a6059b32503a1e63b4629446cb3ed1ea9}{ec\-Get\-Mem\-Map\-Id} (char $\ast$mem\-Map\-I\-D\-String, int $\ast$id)
+\begin{DoxyCompactList}\small\item\em Get index of a memmap object based on its name id string. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_acd7b9aa136d898192f29997b574d58ea}{ec\-Slave\-Config\-D\-C} (int slave\-Bus\-Position, uint16\-\_\-t assign\-Activate, uint32\-\_\-t sync0\-Cycle, int32\-\_\-t sync0\-Shift, uint32\-\_\-t sync1\-Cycle, int32\-\_\-t sync1\-Shift)
+\begin{DoxyCompactList}\small\item\em Configure slave D\-C clock.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_abc852ff24eaadcf6e15ba54d31e6df5f}{ec\-Select\-Reference\-D\-C} (int master\-Index, int slave\-Bus\-Position)
+\begin{DoxyCompactList}\small\item\em Select Ether\-C\-A\-T reference clock.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a0c1eaf9d69a7f12f5bbe2e763fc4bf56}{ec\-Add\-Sdo} (uint16\-\_\-t slave\-Bus\-Position, uint16\-\_\-t sdo\-Index, uint8\-\_\-t sdo\-Sub\-Index, uint32\-\_\-t value, int byte\-Size)
+\begin{DoxyCompactList}\small\item\em Adds a Service Data Object for writing. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_aafc5bf51c28e2954d3de9863becfcbb6}{ec\-Add\-Sdo\-Complete} (uint16\-\_\-t slave\-Bus\-Position, uint16\-\_\-t sdo\-Index, const char $\ast$value\-Buffer, int byte\-Size)
+\begin{DoxyCompactList}\small\item\em Adds a Service Data Object for writing. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_adca20ce733fc4392871e0360bcf950f1}{ec\-Add\-Sdo\-Buffer} (uint16\-\_\-t slave\-Position, uint16\-\_\-t sdo\-Index, uint8\-\_\-t sdo\-Sub\-Index, const char $\ast$value\-Buffer, int byte\-Size)
+\begin{DoxyCompactList}\small\item\em Adds a Service Data Object for writing. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a27b08f273e6780be4611e28b98c02fe2}{ec\-Write\-Sdo} (uint16\-\_\-t slave\-Position, uint16\-\_\-t sdo\-Index, uint8\-\_\-t sdo\-Sub\-Index, uint32\-\_\-t value, int byte\-Size)
+\begin{DoxyCompactList}\small\item\em Write to a Service Data Object. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a6242bc92c6a9221096d8212a314e39b5}{ec\-Read\-Sdo} (uint16\-\_\-t slave\-Position, uint16\-\_\-t sdo\-Index, uint8\-\_\-t sdo\-Sub\-Index, int byte\-Size, uint32\-\_\-t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Write to a Service Data Object. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a9486ed0114a5c2f5f397963a5bc90ea8}{ec\-Verify\-Sdo} (uint16\-\_\-t slave\-Position, uint16\-\_\-t sdo\-Index, uint8\-\_\-t sdo\-Sub\-Index, uint32\-\_\-t ver\-Value, int byte\-Size)
+\begin{DoxyCompactList}\small\item\em Verify a Service Data Object. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a8e833453655b720e9a615930f79f37aa}{ec\-Read\-So\-E} (uint16\-\_\-t slave\-Position, uint8\-\_\-t drive\-No, uint16\-\_\-t idn, size\-\_\-t byte\-Size, uint8\-\_\-t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Read So\-E \par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a53cabc9a72d988614f6e2dd9678daf9d}{ec\-Write\-So\-E} (uint16\-\_\-t slave\-Position, uint8\-\_\-t drive\-No, uint16\-\_\-t idn, size\-\_\-t byte\-Size, uint8\-\_\-t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Write So\-E \par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a324812a59989933aa4b7058ed4e3bbaa}{ec\-Slave\-Config\-Watch\-Dog} (int slave\-Bus\-Position, int watchdog\-Divider, int watchdog\-Intervals)
+\begin{DoxyCompactList}\small\item\em Configure Slave watch dog.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a54e0f51a7d29b350d8b1ccc96a889a1a}{ec\-Apply\-Config} (int master\-Index)
+\begin{DoxyCompactList}\small\item\em Apply hardware configuration to master.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a05dbf250f0fcbf439655cc80e8e6a39d}{write\-Ec\-Entry} (int slave\-Index, int entry\-Index, uint64\-\_\-t value)
+\begin{DoxyCompactList}\small\item\em Writes a value to an Ether\-C\-A\-T entry.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_aaaaf1cfc9281ba8f7707ed7f8ad5d44f}{write\-Ec\-Entry\-I\-D\-String} (int slave\-Bus\-Position, char $\ast$entry\-Id\-String, uint64\-\_\-t value)
+\begin{DoxyCompactList}\small\item\em Writes a value to an Ether\-C\-A\-T entry addressed by slave\-Bus\-Position and entry\-Id\-String.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a38ca7b0719e2770997ed04374ebfe8b6}{read\-Ec\-Entry} (int slave\-Index, int entry\-Index, uint64\-\_\-t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Read a value from an Ether\-C\-A\-T entry.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a00a1013f8514d4ad77c7c998b87ae2e1}{read\-Ec\-Entry\-I\-D\-String} (int slave\-Position, char $\ast$entry\-I\-D\-String, uint64\-\_\-t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Read a value from an Ether\-C\-A\-T entry addressed by slave\-Bus\-Position and entry\-Id\-String.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_aa0ce7aef669dc0114a9018c22dd72f3e}{read\-Ec\-Entry\-Index\-I\-D\-String} (int slave\-Position, char $\ast$entry\-I\-D\-String, int $\ast$value)
+\begin{DoxyCompactList}\small\item\em Read the object Index of an entry addressed by slave\-Bus\-Position and entry\-Id\-String.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a087c5c9f2cc861a2202d2f7023077e28}{read\-Ec\-Slave\-Index} (int slave\-Position, int $\ast$value)
+\begin{DoxyCompactList}\small\item\em Read the object Index of an slave addressed by slave\-Bus\-Position.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a7770f7e102c1ffb415fab5692c5f1670}{read\-Ec\-Mem\-Map} (const char $\ast$mem\-Map\-I\-D\-String, uint8\-\_\-t $\ast$data, size\-\_\-t bytes\-To\-Read, size\-\_\-t $\ast$bytes\-Read)
+\begin{DoxyCompactList}\small\item\em Read Ether\-C\-A\-T memory map object. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_abcc11ae761e62065e86e822f7616dea0}{ec\-Set\-Entry\-Update\-In\-Realtime} (uint16\-\_\-t slave\-Position, char $\ast$entry\-I\-D\-String, int update\-In\-Realtime)
+\begin{DoxyCompactList}\small\item\em Set update in realtime bit for an entry. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a78aa62fa59eb6e65a20f44700d7fd1ae}{ec\-Set\-Diagnostics} (int enable)
+\begin{DoxyCompactList}\small\item\em Enable Ether\-C\-A\-T bus diagnostics.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a376c49bc544c747dfecee7e82874f8c5}{ec\-Set\-Domain\-Failed\-Cycles\-Limit} (int cycles)
+\begin{DoxyCompactList}\small\item\em Set allowed bus cycles in row of none complete domain data transfer.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a03d4b460be063176fb8f323b3eeb3457}{ec\-Reset\-Error} ()
+\begin{DoxyCompactList}\small\item\em Reset error on all Ether\-Cat objects.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_ab9a9dbffae1a9b60e875a7629fca53eb}{ec\-Enable\-Printouts} (int value)
+\begin{DoxyCompactList}\small\item\em Enable diagnostic printouts from Ether\-C\-A\-T objects.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a539dd588a8075054ec3721a1da887ee8}{ec\-Print\-All\-Hardware} ()
+\begin{DoxyCompactList}\small\item\em Prints all hardware connected to selected master.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a592897d06786694bd0f27285d4f7c5ec}{ec\-Print\-Slave\-Config} (int slave\-Index)
+\begin{DoxyCompactList}\small\item\em Prints hardware configuration for a selected slave.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a466a970b1bf11e7a7cfaaa44d8018aae}{link\-Ec\-Entry\-To\-Ec\-Status\-Output} (int slave\-Index, char $\ast$entry\-I\-D\-String)
+\begin{DoxyCompactList}\small\item\em Links an Ether\-C\-A\-T entry to the ethecat master object for hardware status output\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a6e094689b1206ba5c130359f7e79c758}{ec\-Verify\-Slave} (uint16\-\_\-t alias, uint16\-\_\-t slave\-Pos, uint32\-\_\-t vendor\-Id, uint32\-\_\-t product\-Code, uint32\-\_\-t revision\-Num)
+\begin{DoxyCompactList}\small\item\em Verfy slave at position. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a2d6719dc682308897f5fe32984dc20c0}{ec\-Get\-Slave\-Vendor\-Id} (uint16\-\_\-t alias, uint16\-\_\-t slave\-Pos, uint32\-\_\-t $\ast$result)
+\begin{DoxyCompactList}\small\item\em Read vendor id of selected ethercat slave. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_ab3558bc4057513e79ca253d9fb8b6855}{ec\-Get\-Slave\-Product\-Code} (uint16\-\_\-t alias, uint16\-\_\-t slave\-Pos, uint32\-\_\-t $\ast$result)
+\begin{DoxyCompactList}\small\item\em Read product code of selected ethercat slave. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a7115fac518f07f3f0a46cca493825acf}{ec\-Get\-Slave\-Revision\-Num} (uint16\-\_\-t alias, uint16\-\_\-t slave\-Pos, uint32\-\_\-t $\ast$result)
+\begin{DoxyCompactList}\small\item\em revision number id of selected ethercat slave \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a7312eb2cb94665633e77c14b2e826d94}{ec\-Get\-Slave\-Serial\-Num} (uint16\-\_\-t alias, uint16\-\_\-t slave\-Pos, uint32\-\_\-t $\ast$result)
+\begin{DoxyCompactList}\small\item\em Read serial number of selected ethercat slave. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcEthercat_8h_a2ada1bbacb6aafb99a42ecabfc21c0ba}{ec\-Use\-Clock\-Realtime} (int use\-Clk\-R\-T)
+\begin{DoxyCompactList}\small\item\em Use C\-L\-O\-C\-K\-\_\-\-R\-E\-A\-L\-T\-I\-M\-E. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ether\-C\-A\-T commands. 
+
+\subsection{Function Documentation}
+\hypertarget{ecmcEthercat_8h_a815f82ce155380d824595610e3ee534a}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Add\-Entry@{ec\-Add\-Entry}}
+\index{ec\-Add\-Entry@{ec\-Add\-Entry}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Add\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Add\-Entry (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{slave\-Bus\-Position, }
+\item[{uint32\-\_\-t}]{vendor\-Id, }
+\item[{uint32\-\_\-t}]{product\-Code, }
+\item[{int}]{direction, }
+\item[{uint8\-\_\-t}]{sync\-Manger\-Index, }
+\item[{uint16\-\_\-t}]{pdo\-Index, }
+\item[{uint16\-\_\-t}]{entry\-Index, }
+\item[{uint8\-\_\-t}]{entry\-Sub\-Index, }
+\item[{char $\ast$}]{datatype, }
+\item[{char $\ast$}]{entry\-I\-D\-String, }
+\item[{int}]{update\-In\-Real\-Time}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a815f82ce155380d824595610e3ee534a}
+
+
+Adds an Ether\-C\-A\-T slave to the hardware configuration.\par
+. 
+
+Each added slave will be assigned an additional index which will be zero for the first successfully added slave and then incremented for each successful call to \char`\"{}\-Cfg.\-Ec\-Add\-Slave()\char`\"{}.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Bus\-Position = -\/1\-: Used to address the simulation slave. Only two entries are configured, \char`\"{}\-Z\-E\-R\-O\char`\"{} with default value 0 and \char`\"{}\-O\-N\-E\char`\"{} with default value 1.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of normal Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em vendor\-Id} & Identification value for slave vendor.\par
+ vendor\-Id = 0x2\-: Beckhoff.\par
+ vendor\-Id = 0x48554\-B\-: Kendrion Kuhnke Automation Gmb\-H.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em product\-Code} & Product identification code.\par
+ product\-Code=0x13ed3052\-: E\-L5101 incremental encoder input.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em direction} & Data transfer direction..\par
+ direction = 1\-: Output (from master).\par
+ direction = 2\-: Input (to master).\par
+ \\
+\hline
+\mbox{\tt in}  & {\em sync\-Manger\-Index} & Index of sync manager. \\
+\hline
+\mbox{\tt in}  & {\em pdo\-Index} & Index of process data object. Needs to be entered in hex format.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em entry\-Index} & Index of process data object entry. Needs to be entered in hex format.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em entry\-Sub\-Index} & Index of process data object sub entry. Needs to be entered in hex format.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em data\-Type} & Data\-Type of ethercat data\-:\par
+ B1\-: 1-\/bit\par
+ B2\-: 2-\/bits (lsb)\par
+ B3\-: 3-\/bits (lsb)\par
+ B4\-: 4-\/bits (lsb)\par
+ U8\-: Unsigned 8-\/bit\par
+ S8\-: Signed 8-\/bit\par
+ U16\-: Unsigned 16-\/bit\par
+ S16\-: Signed 16-\/bit\par
+ U32\-: Unsigned 32-\/bit\par
+ S32\-: Signed 32-\/bit\par
+ U64\-: Unsigned 64-\/bit\par
+ S64\-: Signed 64-\/bit\par
+ F32\-: Real 32-\/bit\par
+ F64\-: Double 64-\/bit\par
+ \\
+\hline
+\mbox{\tt in}  & {\em entry\-I\-D\-String} & Identification string used for addressing the entry.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em update\-In\-R\-T} & 1 if value should be updated in realtime 0\par
+ normally set to zero for entries that are\par
+ covered in memmaps.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+All configuration data can be found in the documentation of the slave, in the E\-S\-I slave description file or by using the etherlab (www.\-etherlab.\-org) ethercat tool.\par
+ 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Add an Ether\-C\-A\-T entry for the actual position of an E\-L5101 incremental encoder card.\par
+\char`\"{}\-Cfg.\-Ec\-Add\-Entry(2,0x2,0x13ed3052,2,3,0x1a03,0x6010,0x10,\-U16,\-P\-O\-S\-I\-T\-I\-O\-N,1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+ 
+
+Example\-: Add an Ether\-C\-A\-T entry for the velocity setpoint of an E\-L7037 stepper drive card.\par
+\char`\"{}\-Cfg.\-Ec\-Add\-Entry(7,0x2,0x1b7d3052,1,2,0x1604,0x7010,0x21,\-S16,
+\-V\-E\-L\-O\-C\-I\-T\-Y\-\_\-\-S\-E\-T\-P\-O\-I\-N\-T,1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_aefaf1bae717d2be0cc7a9a253453da2b}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Add\-Entry\-Complete@{ec\-Add\-Entry\-Complete}}
+\index{ec\-Add\-Entry\-Complete@{ec\-Add\-Entry\-Complete}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Add\-Entry\-Complete}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Add\-Entry\-Complete (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{slave\-Bus\-Position, }
+\item[{uint32\-\_\-t}]{vendor\-Id, }
+\item[{uint32\-\_\-t}]{product\-Code, }
+\item[{int}]{direction, }
+\item[{uint8\-\_\-t}]{sync\-Manger\-Index, }
+\item[{uint16\-\_\-t}]{pdo\-Index, }
+\item[{uint16\-\_\-t}]{entry\-Index, }
+\item[{uint8\-\_\-t}]{entry\-Sub\-Index, }
+\item[{uint8\-\_\-t}]{bits, }
+\item[{char $\ast$}]{entry\-I\-D\-String, }
+\item[{int}]{signed\-Value}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_aefaf1bae717d2be0cc7a9a253453da2b}
+Adds an Ether\-C\-A\-T slave to the hardware configuration.\par
+ Each added slave will be assigned an additional index which will be zero for the first successfully added slave and then incremented for each successful call to \char`\"{}\-Cfg.\-Ec\-Add\-Slave()\char`\"{}.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Bus\-Position = -\/1\-: Used to address the simulation slave. Only two entries are configured, \char`\"{}\-Z\-E\-R\-O\char`\"{} with default value 0 and \char`\"{}\-O\-N\-E\char`\"{} with default value 1.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of normal Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em vendor\-Id} & Identification value for slave vendor.\par
+ vendor\-Id = 0x2\-: Beckhoff.\par
+ vendor\-Id = 0x48554\-B\-: Kendrion Kuhnke Automation Gmb\-H.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em product\-Code} & Product identification code.\par
+ product\-Code=0x13ed3052\-: E\-L5101 incremental encoder input.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em direction} & Data transfer direction..\par
+ direction = 1\-: Output (from master).\par
+ direction = 2\-: Input (to master).\par
+ \\
+\hline
+\mbox{\tt in}  & {\em sync\-Manger\-Index} & Index of sync manager. \\
+\hline
+\mbox{\tt in}  & {\em pdo\-Index} & Index of process data object. Needs to be entered in hex format.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em entry\-Index} & Index of process data object entry. Needs to be entered in hex format.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em entry\-Sub\-Index} & Index of process data object sub entry. Needs to be entered in hex format.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em bits} & Bit count.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em entry\-I\-D\-String} & Identification string used for addressing the entry.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em signed\-Value} & 1 if value is of signed type otherwise 0\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+All configuration data can be found in the documentation of the slave, in the E\-S\-I slave description file or by using the etherlab (www.\-etherlab.\-org) ethercat tool.\par
+ 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Add an Ether\-C\-A\-T entry for the actual position of an E\-L5101 incremental encoder card.\par
+\char`\"{}\-Cfg.\-Ec\-Add\-Entry\-Complete(2,0x2,0x13ed3052,2,3,0x1a03,0x6010,0x10,16,\-P\-O\-S\-I\-T\-I\-O\-N)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+ 
+
+Example\-: Add an Ether\-C\-A\-T entry for the velocity setpoint of an E\-L7037 stepper drive card.\par
+\char`\"{}\-Cfg.\-Ec\-Add\-Entry\-Complete(7,0x2,0x1b7d3052,1,2,0x1604,0x7010,0x21,16,
+\-V\-E\-L\-O\-C\-I\-T\-Y\-\_\-\-S\-E\-T\-P\-O\-I\-N\-T)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_a739e72e2cc45dfbc7473c6728240a660}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Add\-Mem\-Map@{ec\-Add\-Mem\-Map}}
+\index{ec\-Add\-Mem\-Map@{ec\-Add\-Mem\-Map}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Add\-Mem\-Map}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Add\-Mem\-Map (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{start\-Entry\-Bus\-Position, }
+\item[{char $\ast$}]{start\-Entry\-I\-D\-String, }
+\item[{size\-\_\-t}]{byte\-Size, }
+\item[{int}]{direction, }
+\item[{char $\ast$}]{mem\-Map\-I\-D\-String}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a739e72e2cc45dfbc7473c6728240a660}
+
+
+Adds a memory map object to access data directly from Ether\-C\-A\-T\par
+ domain. Support for this syntax might be dropped in newer releases.\par
+ Please use new syntax.\par
+. 
+
+The start of the memory map is addressed by a previously configured Ether\-C\-A\-T entry and a size.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em start\-Entry\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus where the start entry is configured.\par
+ start\-Entry\-Bus\-Position = 0..65535\-: Addressing of normal Ether\-C\-A\-T slaves.\par
+\\
+\hline
+\mbox{\tt in}  & {\em start\-Entry\-I\-D\-String} & I Identification string of the start Ether\-C\-A\-T
+\begin{DoxyItemize}
+\item entry.\par
+
+\end{DoxyItemize}\\
+\hline
+\mbox{\tt in}  & {\em byte\-Size} & Size of memory map objects (size to access).\par
+\\
+\hline
+\mbox{\tt in}  & {\em direction} & Data transfer direction..\par
+ direction = 1\-: Output (from master).\par
+ direction = 2\-: Input (to master).\par
+ \\
+\hline
+\mbox{\tt in}  & {\em entry\-I\-D\-String} & Identification string used for addressing the object.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Add an Ether\-C\-A\-T input memory map of size 200 bytes starting at entry \char`\"{}\-A\-I1\char`\"{} on slave 10. Name the memory map W\-A\-V\-E\-F\-O\-R\-M. Type argument is excluded in\par
+\char`\"{}\-Cfg.\-Ec\-Add\-Mem\-Map(10,\-A\-I1,200,2,ec0.\-mm.\-W\-A\-V\-E\-F\-O\-R\-M)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_afa3e3a674014a5b16bd6715338184b4e}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Add\-Mem\-Map\-D\-T@{ec\-Add\-Mem\-Map\-D\-T}}
+\index{ec\-Add\-Mem\-Map\-D\-T@{ec\-Add\-Mem\-Map\-D\-T}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Add\-Mem\-Map\-D\-T}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Add\-Mem\-Map\-D\-T (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ec\-Path, }
+\item[{size\-\_\-t}]{byte\-Size, }
+\item[{int}]{direction, }
+\item[{char $\ast$}]{data\-Type, }
+\item[{char $\ast$}]{mem\-Map\-I\-D\-String}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_afa3e3a674014a5b16bd6715338184b4e}
+
+
+Adds a memory map object to access data directly from Ether\-C\-A\-T domain. This is the preferred syntax.\par
+. 
+
+The start of the memory map is addressed by a previously configured Ether\-C\-A\-T entry and a size.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ec\-Path} & Identification string of the start Ether\-C\-A\-T
+\begin{DoxyItemize}
+\item entry (example \char`\"{}ec0.\-s1.\-A\-I\-\_\-1\char`\"{}).\par
+ 
+\end{DoxyItemize}\\
+\hline
+\mbox{\tt in}  & {\em byte\-Size} & Size of memory map objects (size to access).\par
+ \\
+\hline
+\mbox{\tt in}  & {\em direction} & Data transfer direction..\par
+ direction = 1\-: Output (from master).\par
+ direction = 2\-: Input (to master).\par
+ \\
+\hline
+\mbox{\tt in}  & {\em data\-Type} & Data\-Type of ethercat data\-:\par
+ B1\-: 1-\/bit\par
+ B2\-: 2-\/bits (lsb)\par
+ B3\-: 3-\/bits (lsb)\par
+ B4\-: 3-\/bits (lsb)\par
+ U8\-: Unsigned 8-\/bit\par
+ S8\-: Signed 8-\/bit\par
+ U16\-: Unsigned 16-\/bit\par
+ S16\-: Signed 16-\/bit\par
+ U32\-: Unsigned 32-\/bit\par
+ S32\-: Signed 32-\/bit\par
+ U64\-: Unsigned 64-\/bit\par
+ S64\-: Signed 64-\/bit\par
+ F32\-: Real 32-\/bit\par
+ F64\-: Double 64-\/bit\par
+ \\
+\hline
+\mbox{\tt in}  & {\em mem\-Map\-Id\-String} & Identification string used for addressing the object.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Add an Ether\-C\-A\-T input memory map of size 200 bytes starting at entry \char`\"{}\-A\-I1\char`\"{} on slave 10. Name the memory map W\-A\-V\-E\-F\-O\-R\-M. Type argument is excluded in\par
+ \char`\"{}\-Cfg.\-Ec\-Add\-Mem\-Map\-D\-T(10,\-A\-I1,200,2,ec0.\-mm.\-W\-A\-V\-E\-F\-O\-R\-M)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_a0c1eaf9d69a7f12f5bbe2e763fc4bf56}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Add\-Sdo@{ec\-Add\-Sdo}}
+\index{ec\-Add\-Sdo@{ec\-Add\-Sdo}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Add\-Sdo}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Add\-Sdo (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{slave\-Bus\-Position, }
+\item[{uint16\-\_\-t}]{sdo\-Index, }
+\item[{uint8\-\_\-t}]{sdo\-Sub\-Index, }
+\item[{uint32\-\_\-t}]{value, }
+\item[{int}]{byte\-Size}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a0c1eaf9d69a7f12f5bbe2e763fc4bf56}
+
+
+Adds a Service Data Object for writing. 
+
+Adds a Service Data Object for writing to the sdo registers of Ether\-C\-A\-T slaves. An sdo object will be added to the hardware configuration. The writing will occur when the hardware configuration is applied.\par
+ \begin{DoxyNote}{Note}
+This command can only be used in configuration mode.\par
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em sdo\-Index} & Index of service data object. Needs to be entered in hex format.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em sdo\-Sub\-Index} & Sub index of service data object . Needs to be entered in hex format.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em value} & Value to write.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em byte\-Size} & Byte count to write.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+All configuration data can be found in the documentation of the slave, in the E\-S\-I slave description file or by using the etherlab (www.\-etherlab.\-org) ethercat tool.\par
+ 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Write 1\-A (1000m\-A) to maximum current of the E\-L7037 stepper drive card on slave position 2.\par
+\char`\"{}\-Cfg.\-Ec\-Add\-Sdo(2,0x8010,0x1,1000,2)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_adca20ce733fc4392871e0360bcf950f1}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Add\-Sdo\-Buffer@{ec\-Add\-Sdo\-Buffer}}
+\index{ec\-Add\-Sdo\-Buffer@{ec\-Add\-Sdo\-Buffer}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Add\-Sdo\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Add\-Sdo\-Buffer (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{slave\-Position, }
+\item[{uint16\-\_\-t}]{sdo\-Index, }
+\item[{uint8\-\_\-t}]{sdo\-Sub\-Index, }
+\item[{const char $\ast$}]{value\-Buffer, }
+\item[{int}]{byte\-Size}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_adca20ce733fc4392871e0360bcf950f1}
+
+
+Adds a Service Data Object for writing. 
+
+Adds a Service Data Object for writing to the sdo registers of Ether\-C\-A\-T slaves. An sdo object will be added to the hardware configuration. The writing will occur when the hardware configuration is applied.\par
+ \begin{DoxyNote}{Note}
+This command can only be used in configuration mode.\par
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em sdo\-Index} & Index of service data object. Needs to be entered in hex format.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em sdo\-Sub\-Index} & Sub index of service data object. Needs to be entered in hex format.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em value\-Buffer} & Values to be written as hex string, each byte separted with space.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em byte\-Size} & Byte count to write.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+All configuration data can be found in the documentation of the slave, in the E\-S\-I slave description file or by using the etherlab (www.\-etherlab.\-org) ethercat tool.\par
+ 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Write a hex string of data to slave position 2.\par
+\char`\"{}\-Cfg.\-Ec\-Add\-Sdo\-Buffer(2,0x8010,0x1,0\-A F\-F C\-A 01 25 F1,6)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_aafc5bf51c28e2954d3de9863becfcbb6}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Add\-Sdo\-Complete@{ec\-Add\-Sdo\-Complete}}
+\index{ec\-Add\-Sdo\-Complete@{ec\-Add\-Sdo\-Complete}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Add\-Sdo\-Complete}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Add\-Sdo\-Complete (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{slave\-Bus\-Position, }
+\item[{uint16\-\_\-t}]{sdo\-Index, }
+\item[{const char $\ast$}]{value\-Buffer, }
+\item[{int}]{byte\-Size}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_aafc5bf51c28e2954d3de9863becfcbb6}
+
+
+Adds a Service Data Object for writing. 
+
+Adds a Service Data Object for writing to the sdo registers of Ether\-C\-A\-T slaves. An sdo object will be added to the hardware configuration. The writing will occur when the hardware configuration is applied.\par
+ \begin{DoxyNote}{Note}
+This command can only be used in configuration mode.\par
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em sdo\-Index} & Index of service data object. Needs to be entered in hex format.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em value\-Buffer} & Values to be written as hex string, each byte separted with space.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em byte\-Size} & Byte count to write.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+All configuration data can be found in the documentation of the slave, in the E\-S\-I slave description file or by using the etherlab (www.\-etherlab.\-org) ethercat tool.\par
+ 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Write a hex string of data to slave position 2.\par
+\char`\"{}\-Cfg.\-Ec\-Add\-Sdo\-Complete(2,0x8010,0\-A F\-F C\-A 01 25 F1,6)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_a252ceff241a2859d83153028b60a2f7f}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Add\-Slave@{ec\-Add\-Slave}}
+\index{ec\-Add\-Slave@{ec\-Add\-Slave}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Add\-Slave}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Add\-Slave (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{alias, }
+\item[{uint16\-\_\-t}]{position, }
+\item[{uint32\-\_\-t}]{vendor\-Id, }
+\item[{uint32\-\_\-t}]{product\-Code}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a252ceff241a2859d83153028b60a2f7f}
+
+
+Adds an Ether\-C\-A\-T slave to the hardware configuration.\par
+. 
+
+Each added slave will be assigned an additional index which will be zero for the first successfully added slave and then incremented for each successful call to \char`\"{}\-Cfg.\-Ec\-Add\-Slave()\char`\"{}.\par
+ N\-O\-T\-E\-: if an complete entry needs to be configured the command \char`\"{}\-Cfg.\-Ec\-Add\-Entry\-Complete()\char`\"{} should be used. This command will add slave, sync. manger, pdo and entry if needed.\par
+ 
+\begin{DoxyParams}{Parameters}
+{\em alias} & Alias of slave. Set to zero to disable.\par
+ \\
+\hline
+{\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Bus\-Position = -\/1\-: Used to address the simulation slave. Only two entries are configured, \char`\"{}\-Z\-E\-R\-O\char`\"{} with default value 0 and \char`\"{}\-O\-N\-E\char`\"{} with default value 1.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of normal Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+{\em vendor\-Id} & Identification value for slave vendor.\par
+ vendor\-Id = 0x2\-: Beckhoff.\par
+ vendor\-Id = 0x48554\-B\-: Kendrion Kuhnke Automation Gmb\-H.\par
+ \\
+\hline
+{\em product\-Code} & Product identification code.\par
+ product\-Code=0x13ed3052\-: E\-L5101 incremental encoder input.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+All configuration data can be found in the documentaion of the slave, in the E\-S\-I slave description file or by using the etherlab (www.\-etherlab.\-org) ethercat tool.\par
+ 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Add a E\-L5101 Beckhoff slave at slave position 1.\par
+ \char`\"{}\-Cfg.\-Ec\-Add\-Slave(0,1,0x2,0x13ed3052)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_a54e0f51a7d29b350d8b1ccc96a889a1a}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Apply\-Config@{ec\-Apply\-Config}}
+\index{ec\-Apply\-Config@{ec\-Apply\-Config}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Apply\-Config}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Apply\-Config (
+\begin{DoxyParamCaption}
+\item[{int}]{master\-Index}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a54e0f51a7d29b350d8b1ccc96a889a1a}
+
+
+Apply hardware configuration to master.\par
+. 
+
+This command needs to be executed before entering runtime.\par
+ \begin{DoxyNote}{Note}
+This command can only be used in configuration mode.\par
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em master\-Index} & Index of master, see command \hyperlink{ecmcEthercat_8h_a38ff2b5757af196a894b555da655416c}{ec\-Set\-Master()}.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Apply hardware configuration to master 0 (/dev/\-Ether\-C\-A\-T0).\par
+\char`\"{}\-Cfg.\-Ec\-Apply\-Config(0)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_ab9a9dbffae1a9b60e875a7629fca53eb}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Enable\-Printouts@{ec\-Enable\-Printouts}}
+\index{ec\-Enable\-Printouts@{ec\-Enable\-Printouts}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Enable\-Printouts}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Enable\-Printouts (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_ab9a9dbffae1a9b60e875a7629fca53eb}
+
+
+Enable diagnostic printouts from Ether\-C\-A\-T objects.\par
+. 
+
+Enables/\-Disables diagnostic printouts from\-:
+\begin{DoxyEnumerate}
+\item ecmc\-Ec().\par
+
+\item ecmc\-Ec\-Slave().\par
+
+\item ecmc\-Ec\-Sync\-Manager().\par
+
+\item ecmc\-Ec\-Pdo().\par
+
+\item ecmc\-Ec\-S\-D\-O().\par
+
+\item ecmc\-Ec\-Entry().\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em enable} & Enable diagnostic printouts.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Enable Ether\-C\-A\-T related diagnostic printouts.\par
+ \char`\"{}\-Cfg.\-Ec\-Enable\-Printouts(1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+
+\end{DoxyEnumerate}\hypertarget{ecmcEthercat_8h_a6059b32503a1e63b4629446cb3ed1ea9}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Get\-Mem\-Map\-Id@{ec\-Get\-Mem\-Map\-Id}}
+\index{ec\-Get\-Mem\-Map\-Id@{ec\-Get\-Mem\-Map\-Id}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Get\-Mem\-Map\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Get\-Mem\-Map\-Id (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{mem\-Map\-I\-D\-String, }
+\item[{int $\ast$}]{id}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a6059b32503a1e63b4629446cb3ed1ea9}
+
+
+Get index of a memmap object based on its name id string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mem\-Map\-I\-D\-String} & memmap name \\
+\hline
+\mbox{\tt out}  & {\em index} & index of memmap corresponding to mem\-Map\-I\-D\-String\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Get memmap id.\par
+\char`\"{}\-Ec\-Get\-Mem\-Map\-Id(\char`\"{}ec0.\-s2.\-mm.\-C\-H1\-\_\-\-A\-R\-R\-A\-Y\char`\"{})\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_ab3558bc4057513e79ca253d9fb8b6855}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Get\-Slave\-Product\-Code@{ec\-Get\-Slave\-Product\-Code}}
+\index{ec\-Get\-Slave\-Product\-Code@{ec\-Get\-Slave\-Product\-Code}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Get\-Slave\-Product\-Code}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Get\-Slave\-Product\-Code (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{alias, }
+\item[{uint16\-\_\-t}]{slave\-Pos, }
+\item[{uint32\-\_\-t $\ast$}]{result}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_ab3558bc4057513e79ca253d9fb8b6855}
+
+
+Read product code of selected ethercat slave. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em alias} & Alias of slave. Set to zero to disable.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em slave\-In} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Index = 0..65535\-: Addressing of normal Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt out}  & {\em result} & Product code.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Product Code of slave 3\-:\par
+ \char`\"{}\-Ec\-Get\-Slave\-Product\-Code(0,3)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em alias} & Slave alias. \\
+\hline
+{\em slave\-Pos} & Slave position. \\
+\hline
+\end{DoxyParams}
+\hypertarget{ecmcEthercat_8h_a7115fac518f07f3f0a46cca493825acf}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Get\-Slave\-Revision\-Num@{ec\-Get\-Slave\-Revision\-Num}}
+\index{ec\-Get\-Slave\-Revision\-Num@{ec\-Get\-Slave\-Revision\-Num}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Get\-Slave\-Revision\-Num}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Get\-Slave\-Revision\-Num (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{alias, }
+\item[{uint16\-\_\-t}]{slave\-Pos, }
+\item[{uint32\-\_\-t $\ast$}]{result}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a7115fac518f07f3f0a46cca493825acf}
+
+
+revision number id of selected ethercat slave 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em alias} & Alias of slave. Set to zero to disable.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em slave\-In} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Index = 0..65535\-: Addressing of normal Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt out}  & {\em result} & Revision number.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Read revision number of slave 3\-:\par
+ \char`\"{}\-Ec\-Get\-Slave\-Revision\-Num(0,3)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em alias} & Slave alias. \\
+\hline
+{\em slave\-Pos} & Slave position. \\
+\hline
+\end{DoxyParams}
+\hypertarget{ecmcEthercat_8h_a7312eb2cb94665633e77c14b2e826d94}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Get\-Slave\-Serial\-Num@{ec\-Get\-Slave\-Serial\-Num}}
+\index{ec\-Get\-Slave\-Serial\-Num@{ec\-Get\-Slave\-Serial\-Num}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Get\-Slave\-Serial\-Num}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Get\-Slave\-Serial\-Num (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{alias, }
+\item[{uint16\-\_\-t}]{slave\-Pos, }
+\item[{uint32\-\_\-t $\ast$}]{result}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a7312eb2cb94665633e77c14b2e826d94}
+
+
+Read serial number of selected ethercat slave. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em alias} & Alias of slave. Set to zero to disable.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em slave\-In} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Index = 0..65535\-: Addressing of normal Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt out}  & {\em result} & Serial number.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Read serial number of slave 3\-:\par
+ \char`\"{}\-Ec\-Get\-Slave\-Serial\-Num(0,3)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em alias} & Slave alias. \\
+\hline
+{\em slave\-Pos} & Slave position. \\
+\hline
+\end{DoxyParams}
+\hypertarget{ecmcEthercat_8h_a2d6719dc682308897f5fe32984dc20c0}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Get\-Slave\-Vendor\-Id@{ec\-Get\-Slave\-Vendor\-Id}}
+\index{ec\-Get\-Slave\-Vendor\-Id@{ec\-Get\-Slave\-Vendor\-Id}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Get\-Slave\-Vendor\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Get\-Slave\-Vendor\-Id (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{alias, }
+\item[{uint16\-\_\-t}]{slave\-Pos, }
+\item[{uint32\-\_\-t $\ast$}]{result}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a2d6719dc682308897f5fe32984dc20c0}
+
+
+Read vendor id of selected ethercat slave. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em alias} & Alias of slave. Set to zero to disable.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em slave\-In} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Index = 0..65535\-: Addressing of normal Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt out}  & {\em result} & Vendor id.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ $\ast$
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Read vendor id of slave 3\-:\par
+ \char`\"{}\-Ec\-Get\-Slave\-Vendor\-Id(0,3)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em alias} & Slave alias. \\
+\hline
+{\em slave\-Pos} & Slave position. \\
+\hline
+\end{DoxyParams}
+\hypertarget{ecmcEthercat_8h_a539dd588a8075054ec3721a1da887ee8}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Print\-All\-Hardware@{ec\-Print\-All\-Hardware}}
+\index{ec\-Print\-All\-Hardware@{ec\-Print\-All\-Hardware}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Print\-All\-Hardware}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Print\-All\-Hardware (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a539dd588a8075054ec3721a1da887ee8}
+
+
+Prints all hardware connected to selected master.\par
+. 
+
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: \char`\"{}\-Ec\-Print\-All\-Hardware()\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_a592897d06786694bd0f27285d4f7c5ec}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Print\-Slave\-Config@{ec\-Print\-Slave\-Config}}
+\index{ec\-Print\-Slave\-Config@{ec\-Print\-Slave\-Config}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Print\-Slave\-Config}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Print\-Slave\-Config (
+\begin{DoxyParamCaption}
+\item[{int}]{slave\-Index}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a592897d06786694bd0f27285d4f7c5ec}
+
+
+Prints hardware configuration for a selected slave.\par
+. 
+
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-:Print hardware configuration for slave 1 \char`\"{}\-Ec\-Print\-Slave\-Config(1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_a6242bc92c6a9221096d8212a314e39b5}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Read\-Sdo@{ec\-Read\-Sdo}}
+\index{ec\-Read\-Sdo@{ec\-Read\-Sdo}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Read\-Sdo}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Read\-Sdo (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{slave\-Position, }
+\item[{uint16\-\_\-t}]{sdo\-Index, }
+\item[{uint8\-\_\-t}]{sdo\-Sub\-Index, }
+\item[{int}]{byte\-Size, }
+\item[{uint32\-\_\-t $\ast$}]{value}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a6242bc92c6a9221096d8212a314e39b5}
+
+
+Write to a Service Data Object. 
+
+Note\-: same as \char`\"{}ec\-Write\-Sdo(uint16\-\_\-t slave\-Pposition,uint16\-\_\-t sdo\-Index,uint8\-\_\-t sdo\-Sub\-Index,
+uint32\-\_\-t value,int byte\-Size)\char`\"{} but without subindex. Complete S\-D\-O access will be used.\-Read a Service Data Object.
+
+Read will occur directly when the command is issued.\par
+ \begin{DoxyNote}{Note}
+This command can only be used in configuration mode.\par
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em sdo\-Index} & Index of service data object. Needs to be entered in hex format.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em sdo\-Sub\-Index} & Sub index of service data object . Needs to be entered in hex format.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em byte\-Size} & Byte count to read.\par
+ \\
+\hline
+\mbox{\tt out}  & {\em data} & Read data.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+All configuration data can be found in the documentation of the slave, in the E\-S\-I slave description file or by using the etherlab (www.\-etherlab.\-org) ethercat tool.\par
+ 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if success other wise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Read maximum current setting of the E\-L7037 stepper drive card on slave position 2.\par
+\char`\"{}\-Cfg.\-Ec\-Read\-Sdo(2,0x8010,0x1,2)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_a8e833453655b720e9a615930f79f37aa}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Read\-So\-E@{ec\-Read\-So\-E}}
+\index{ec\-Read\-So\-E@{ec\-Read\-So\-E}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Read\-So\-E}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Read\-So\-E (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{slave\-Position, }
+\item[{uint8\-\_\-t}]{drive\-No, }
+\item[{uint16\-\_\-t}]{idn, }
+\item[{size\-\_\-t}]{byte\-Size, }
+\item[{uint8\-\_\-t $\ast$}]{value}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a8e833453655b720e9a615930f79f37aa}
+
+
+Read So\-E \par
+. 
+
+\begin{DoxyNote}{Note}
+This command can only be used in configuration mode.\par
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em drive\-No} & So\-E drive number.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em idn} & So\-E I\-D\-N.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em byte\-Size} & Byte count to read.\par
+ \\
+\hline
+\mbox{\tt out}  & {\em value} & Pointer to read data.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+All configuration data can be found in the documentation of the slave\par
+ 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if success other wise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Read data for drive 0 on slave position 2.\par
+\char`\"{}\-Cfg.\-Ec\-Read\-So\-E(2,0,0x1000,2)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em slave\-Position} & Slave position. \\
+\hline
+{\em drive\-No} & Drive number. \\
+\hline
+{\em idn} & So\-E I\-D\-N (see ecrt\-\_\-slave\-\_\-config\-\_\-idn()). \\
+\hline
+{\em byte\-Size} & Size of data to write. \\
+\hline
+{\em value} & Pointer to data to write. \\
+\hline
+\end{DoxyParams}
+\hypertarget{ecmcEthercat_8h_a03d4b460be063176fb8f323b3eeb3457}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Reset\-Error@{ec\-Reset\-Error}}
+\index{ec\-Reset\-Error@{ec\-Reset\-Error}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Reset\-Error}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Reset\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a03d4b460be063176fb8f323b3eeb3457}
+
+
+Reset error on all Ether\-Cat objects.\par
+. 
+
+Resets error on the following object types\-:\par
+
+\begin{DoxyEnumerate}
+\item ecmc\-Ec().\par
+
+\item ecmc\-Ec\-Slave().\par
+
+\item ecmc\-Ec\-Sync\-Manager().\par
+
+\item ecmc\-Ec\-Pdo().\par
+
+\item ecmc\-Ec\-S\-D\-O().\par
+
+\item ecmc\-Ec\-Entry().\par
+ \begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Reset Ether\-C\-A\-T errors.\par
+ \char`\"{}\-Cfg.\-Ec\-Reset\-Error()\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+
+\end{DoxyEnumerate}\hypertarget{ecmcEthercat_8h_a124bcb84b719bb9bd104fcf3298faf96}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Reset\-Master@{ec\-Reset\-Master}}
+\index{ec\-Reset\-Master@{ec\-Reset\-Master}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Reset\-Master}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Reset\-Master (
+\begin{DoxyParamCaption}
+\item[{int}]{master\-Index}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a124bcb84b719bb9bd104fcf3298faf96}
+
+
+Retry configuring slaves for an selected Ether\-C\-A\-T master.\par
+. 
+
+Via this method, the application can tell the master to bring all slaves to O\-P state. In general, this is not necessary, because it is automatically done by the master. But with special slaves, that can be reconfigured by the vendor during runtime, it can be useful.
+
+\begin{DoxyNote}{Note}
+master\-Index is not used. Currently only one master is supported and this master will be reset. The master\-Index is for future use.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em master\-Index} & Ether\-C\-A\-T master index.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Reset master. Master index is N\-O\-T currently supported.\par
+ \char`\"{}\-Cfg.\-Ec\-Reset\-Master(10)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_abc852ff24eaadcf6e15ba54d31e6df5f}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Select\-Reference\-D\-C@{ec\-Select\-Reference\-D\-C}}
+\index{ec\-Select\-Reference\-D\-C@{ec\-Select\-Reference\-D\-C}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Select\-Reference\-D\-C}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Select\-Reference\-D\-C (
+\begin{DoxyParamCaption}
+\item[{int}]{master\-Index, }
+\item[{int}]{slave\-Bus\-Position}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_abc852ff24eaadcf6e15ba54d31e6df5f}
+
+
+Select Ether\-C\-A\-T reference clock.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em master\-Index} & Index of master, see command \hyperlink{ecmcEthercat_8h_a38ff2b5757af196a894b555da655416c}{ec\-Set\-Master()}.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus. Note\-: the slave needs to be equipped with a D\-C.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of Ether\-C\-A\-T slaves.\par
+$\ast$\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Select slave 3 as reference clock for master 0.\par
+\char`\"{}\-Cfg.\-Ec\-Select\-Reference\-D\-C(0,3)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_a78aa62fa59eb6e65a20f44700d7fd1ae}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Set\-Diagnostics@{ec\-Set\-Diagnostics}}
+\index{ec\-Set\-Diagnostics@{ec\-Set\-Diagnostics}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Set\-Diagnostics}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Set\-Diagnostics (
+\begin{DoxyParamCaption}
+\item[{int}]{enable}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a78aa62fa59eb6e65a20f44700d7fd1ae}
+
+
+Enable Ether\-C\-A\-T bus diagnostics.\par
+. 
+
+Diagnostics are made at three different levels\-:\par
+
+\begin{DoxyEnumerate}
+\item Slave level.\par
+
+\item Domain level.\par
+
+\item Master level.\par
+ All three levels of diagnostics are enabled or disabled with this command. If the diagnostics are enabled the motion axes are interlocked if any of the above levels report issues. If the diagnostics are disabled the motion axes are not interlocked even if there's alarms on the Ether\-C\-A\-T bus.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em enable} & Enable diagnostics.\par
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Enable Ether\-C\-A\-T diagnostics.\par
+ \char`\"{}\-Cfg.\-Ec\-Set\-Diagnostics(1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+
+\end{DoxyEnumerate}\hypertarget{ecmcEthercat_8h_a376c49bc544c747dfecee7e82874f8c5}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Set\-Domain\-Failed\-Cycles\-Limit@{ec\-Set\-Domain\-Failed\-Cycles\-Limit}}
+\index{ec\-Set\-Domain\-Failed\-Cycles\-Limit@{ec\-Set\-Domain\-Failed\-Cycles\-Limit}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Set\-Domain\-Failed\-Cycles\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Set\-Domain\-Failed\-Cycles\-Limit (
+\begin{DoxyParamCaption}
+\item[{int}]{cycles}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a376c49bc544c747dfecee7e82874f8c5}
+
+
+Set allowed bus cycles in row of none complete domain data transfer.\par
+. 
+
+Allows a certain number of bus cycles of non-\/complete domain data transfer before alarming.\par
+ \begin{DoxyNote}{Note}
+Normally the application is correct configured all domain data transfers should be complete. This command should therefor only be used for testing purpose when the final configuration is not yet made.\par
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cycles} & Number of cycles.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Set the allowd bus cycles of non complete domain data to 10.\par
+ \char`\"{}\-Cfg.\-Ec\-Set\-Domain\-Failed\-Cycles\-Limit(10)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_abcc11ae761e62065e86e822f7616dea0}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Set\-Entry\-Update\-In\-Realtime@{ec\-Set\-Entry\-Update\-In\-Realtime}}
+\index{ec\-Set\-Entry\-Update\-In\-Realtime@{ec\-Set\-Entry\-Update\-In\-Realtime}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Set\-Entry\-Update\-In\-Realtime}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Set\-Entry\-Update\-In\-Realtime (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{slave\-Position, }
+\item[{char $\ast$}]{entry\-I\-D\-String, }
+\item[{int}]{update\-In\-Realtime}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_abcc11ae761e62065e86e822f7616dea0}
+
+
+Set update in realtime bit for an entry. 
+
+If set to zero the entry will not be updated during realtime operation.\par
+Useful when accessing data with memory maps instead covering many entries like oversampling arrays (it's then unnecessary to update each entry in array).\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Position = -\/1\-: Used to address the simulation slave. Only two entries are configured, \char`\"{}\-Z\-E\-R\-O\char`\"{} with default value 0 and \char`\"{}\-O\-N\-E\char`\"{} with default value 1.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of normal Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em entry\-Id\-String} & String for addressing purpose (see command \char`\"{}\-Cfg.\-Ec\-Add\-Entry\-Complete() for more information\char`\"{}).\par
+ \\
+\hline
+\mbox{\tt in}  & {\em update\-In\-Realtime} & 1 for update of entry data in realtime and 0 not to update data in realtime.\par
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Example\-: Disable update of value in realtime for entry with name \char`\"{}\-A\-I\-\_\-1\char`\"{} on bus position 5.\par
+ \char`\"{}\-Cfg.\-Ec\-Set\-Entry\-Update\-In\-Realtime(5,\-A\-I\-\_\-1,0)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_a38ff2b5757af196a894b555da655416c}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Set\-Master@{ec\-Set\-Master}}
+\index{ec\-Set\-Master@{ec\-Set\-Master}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Set\-Master}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Set\-Master (
+\begin{DoxyParamCaption}
+\item[{int}]{master\-Index}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a38ff2b5757af196a894b555da655416c}
+
+
+Selects Ether\-C\-A\-T master to use.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em master\-Index} & Ether\-C\-A\-T master index.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Select /dev/\-Ether\-C\-A\-T0.\par
+ \char`\"{}\-Cfg.\-Ec\-Set\-Master(0)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_acd7b9aa136d898192f29997b574d58ea}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Slave\-Config\-D\-C@{ec\-Slave\-Config\-D\-C}}
+\index{ec\-Slave\-Config\-D\-C@{ec\-Slave\-Config\-D\-C}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Slave\-Config\-D\-C}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Slave\-Config\-D\-C (
+\begin{DoxyParamCaption}
+\item[{int}]{slave\-Bus\-Position, }
+\item[{uint16\-\_\-t}]{assign\-Activate, }
+\item[{uint32\-\_\-t}]{sync0\-Cycle, }
+\item[{int32\-\_\-t}]{sync0\-Shift, }
+\item[{uint32\-\_\-t}]{sync1\-Cycle, }
+\item[{int32\-\_\-t}]{sync1\-Shift}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_acd7b9aa136d898192f29997b574d58ea}
+
+
+Configure slave D\-C clock.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of Ether\-C\-A\-T slaves.\par
+$\ast$ \\
+\hline
+\mbox{\tt in}  & {\em assign\-Activate} & A$\ast$ Each added slave will be assigned an additional index which will be zero for the first successfully added slave and then incremented for each successful call to \char`\"{}\-Cfg.\-Ec\-Add\-Slave()\char`\"{}.\par
+ assign active word. This information can be found in the E\-S\-I slave description file. Needs to be entered in hex format.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em sync0\-Cycle} & Cycle time in ns.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em sync0\-Shift} & Phase shift in ns.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em sync1\-Cycle} & Cycle time in ns.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em sync1\-Shift} & Not used.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Configure the D\-C clock of an E\-L5101 incremental encoder input card\-: slave\-Bus\-Position=1, assign\-Activate=0x320, sync0\-Cycle=1000000 (1k\-Hz), sync0\-Shift=10, sync1\-Cycle=1000000 (1k\-Hz).\par
+\char`\"{}\-Cfg.\-Ec\-Slave\-Config\-D\-C(1,0x320,1000000,10,1000000,0)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em assign\-Activate} & Assign\-Activate word. \\
+\hline
+{\em sync0\-Cycle} & S\-Y\-N\-C0 cycle time \mbox{[}ns\mbox{]}. \\
+\hline
+{\em sync0\-Shift} & S\-Y\-N\-C0 shift time \mbox{[}ns\mbox{]}. \\
+\hline
+{\em sync1\-Cycle} & S\-Y\-N\-C1 cycle time \mbox{[}ns\mbox{]}. \\
+\hline
+{\em sync1\-Shift} & S\-Y\-N\-C1 shift time \mbox{[}ns\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{ecmcEthercat_8h_a324812a59989933aa4b7058ed4e3bbaa}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Slave\-Config\-Watch\-Dog@{ec\-Slave\-Config\-Watch\-Dog}}
+\index{ec\-Slave\-Config\-Watch\-Dog@{ec\-Slave\-Config\-Watch\-Dog}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Slave\-Config\-Watch\-Dog}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Slave\-Config\-Watch\-Dog (
+\begin{DoxyParamCaption}
+\item[{int}]{slave\-Bus\-Position, }
+\item[{int}]{watchdog\-Divider, }
+\item[{int}]{watchdog\-Intervals}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a324812a59989933aa4b7058ed4e3bbaa}
+
+
+Configure Slave watch dog.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus. Note\-: the slave needs to be equipped with a D\-C.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em watchdog\-Divider} & Number of 40 ns intervals. Used as a base unit for all slave watchdogs. If set to zero, the value is not written, so the default is used.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em watchdog\-Intervals} & Number of base intervals for process data watchdog. If set to zero, the value is not written, so the default is used.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Example\-: Set watchdog times to 100,100 for slave at busposition 1.\par
+\char`\"{}\-Cfg.\-Ec\-Slave\-Config\-Watch\-Dog(1,100,100)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+ 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+
+\end{DoxyReturn}
+\hypertarget{ecmcEthercat_8h_a2ada1bbacb6aafb99a42ecabfc21c0ba}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Use\-Clock\-Realtime@{ec\-Use\-Clock\-Realtime}}
+\index{ec\-Use\-Clock\-Realtime@{ec\-Use\-Clock\-Realtime}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Use\-Clock\-Realtime}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Use\-Clock\-Realtime (
+\begin{DoxyParamCaption}
+\item[{int}]{use\-Clk\-R\-T}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a2ada1bbacb6aafb99a42ecabfc21c0ba}
+
+
+Use C\-L\-O\-C\-K\-\_\-\-R\-E\-A\-L\-T\-I\-M\-E. 
+
+Ecmc will as default use C\-L\-O\-C\-K\-\_\-\-M\-O\-N\-O\-T\-O\-N\-I\-C as clock source both for\par
+ the R\-T loop and the ethercat bus.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em use\-Clk\-R\-T} & Select clock use\-Clk\-R\-T = 0\-: Use C\-L\-O\-C\-K\-\_\-\-M\-O\-N\-O\-T\-O\-N\-I\-C.\par
+ use\-Clk\-R\-T = 1\-: Use C\-L\-O\-C\-K\-\_\-\-R\-E\-A\-L\-T\-I\-M\-E.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Use C\-L\-O\-C\-K\-\_\-\-R\-E\-A\-L\-T\-I\-M\-E\-:\par
+ \char`\"{}\-Cfg.\-Ec\-Use\-Clock\-Realtime(1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_a9486ed0114a5c2f5f397963a5bc90ea8}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Verify\-Sdo@{ec\-Verify\-Sdo}}
+\index{ec\-Verify\-Sdo@{ec\-Verify\-Sdo}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Verify\-Sdo}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Verify\-Sdo (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{slave\-Position, }
+\item[{uint16\-\_\-t}]{sdo\-Index, }
+\item[{uint8\-\_\-t}]{sdo\-Sub\-Index, }
+\item[{uint32\-\_\-t}]{ver\-Value, }
+\item[{int}]{byte\-Size}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a9486ed0114a5c2f5f397963a5bc90ea8}
+
+
+Verify a Service Data Object. 
+
+Read will occur directly when the command is issued.\par
+ \begin{DoxyNote}{Note}
+This command can only be used in configuration mode.\par
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em sdo\-Index} & Index of service data object. Needs to be entered in hex format.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em sdo\-Sub\-Index} & Sub index of service data object . Needs to be entered in hex format.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em byte\-Size} & Byte count to read.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em ver\-Value} & Expected value of S\-D\-O.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+All configuration data can be found in the documentation of the slave, in the E\-S\-I slave description file or by using the etherlab (www.\-etherlab.\-org) ethercat tool.\par
+ 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if success other wise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Verify maximum current setting of the E\-L7037 stepper drive card on slave position 2 is set to 1000m\-A.\par
+\char`\"{}\-Cfg.\-Ec\-Verify\-Sdo(2,0x8010,0x1,1000,2)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_a6e094689b1206ba5c130359f7e79c758}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Verify\-Slave@{ec\-Verify\-Slave}}
+\index{ec\-Verify\-Slave@{ec\-Verify\-Slave}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Verify\-Slave}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Verify\-Slave (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{alias, }
+\item[{uint16\-\_\-t}]{slave\-Pos, }
+\item[{uint32\-\_\-t}]{vendor\-Id, }
+\item[{uint32\-\_\-t}]{product\-Code, }
+\item[{uint32\-\_\-t}]{revision\-Num}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a6e094689b1206ba5c130359f7e79c758}
+
+
+Verfy slave at position. 
+
+The command verifys that the actual slave at a certain position\textbackslash{} have the correct alias, position, vendor id, product code and revision number.\par
+ Check of slave revsion number will be skipped if set to 0.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em alias} & Alias of slave. Set to zero to disable.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em slave\-In} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Index = 0..65535\-: Addressing of normal Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em vendor\-Id} & Identification value for slave vendor.\par
+ vendor\-Id = 0x2\-: Beckhoff.\par
+ vendor\-Id = 0x48554\-B\-: Kendrion Kuhnke Automation Gmb\-H.\par
+ \\
+\hline
+ & {\em product\-Code} & Product identification code.\par
+ product\-Code=0x13ed3052\-: E\-L5101 incremental encoder input.\par
+ \\
+\hline
+ & {\em revision\-Num} & Product revision number. The revsion number of the\par
+ actual slave needs to equal or newer than that of the configuration.\par
+ if revision\-Num==0 then this function will not check revsion\-Num of \par
+ the slave. revision\-Num=0x04000000\-: E\-L5101 incremental encoder input.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Verify that slave 3 is an E\-L5101 with a revsion $>$= 0x04000000\par
+ \char`\"{}\-Cfg.\-Ec\-Verify\-Slave(0,3,0x2,0x13ed3052,0x04000000)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em alias} & Slave alias. \\
+\hline
+{\em slave\-Pos} & Slave position. \\
+\hline
+{\em vendor\-Id} & Expected vendor I\-D. \\
+\hline
+{\em product\-Code} & Expected product code. \\
+\hline
+{\em revision\-Num} & Revision number \\
+\hline
+\end{DoxyParams}
+\hypertarget{ecmcEthercat_8h_a27b08f273e6780be4611e28b98c02fe2}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Write\-Sdo@{ec\-Write\-Sdo}}
+\index{ec\-Write\-Sdo@{ec\-Write\-Sdo}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Write\-Sdo}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Write\-Sdo (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{slave\-Position, }
+\item[{uint16\-\_\-t}]{sdo\-Index, }
+\item[{uint8\-\_\-t}]{sdo\-Sub\-Index, }
+\item[{uint32\-\_\-t}]{value, }
+\item[{int}]{byte\-Size}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a27b08f273e6780be4611e28b98c02fe2}
+
+
+Write to a Service Data Object. 
+
+Writing will occur directly when the command is issued.\par
+ \begin{DoxyNote}{Note}
+This command can only be used in configuration mode.\par
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em sdo\-Index} & Index of service data object. Needs to be entered in hex format.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em sdo\-Sub\-Index} & Sub index of service data object . Needs to be entered in hex format.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em value} & Value to write.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em byte\-Size} & Byte count to write.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+All configuration data can be found in the documentation of the slave, in the E\-S\-I slave description file or by using the etherlab (www.\-etherlab.\-org) ethercat tool.\par
+ 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Write 1\-A (1000m\-A) to maximum current of the E\-L7037 stepper drive card on slave position 2.\par
+\char`\"{}\-Cfg.\-Ec\-Write\-Sdo(2,0x8010,0x1,1000,2)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_a53cabc9a72d988614f6e2dd9678daf9d}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!ec\-Write\-So\-E@{ec\-Write\-So\-E}}
+\index{ec\-Write\-So\-E@{ec\-Write\-So\-E}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{ec\-Write\-So\-E}]{\setlength{\rightskip}{0pt plus 5cm}int ec\-Write\-So\-E (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{slave\-Position, }
+\item[{uint8\-\_\-t}]{drive\-No, }
+\item[{uint16\-\_\-t}]{idn, }
+\item[{size\-\_\-t}]{byte\-Size, }
+\item[{uint8\-\_\-t $\ast$}]{value}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a53cabc9a72d988614f6e2dd9678daf9d}
+
+
+Write So\-E \par
+. 
+
+\begin{DoxyNote}{Note}
+This command can only be used in configuration mode.\par
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em drive\-No} & So\-E drive number.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em idn} & So\-E I\-D\-N.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em byte\-Size} & Byte count to write.\par
+ \\
+\hline
+\mbox{\tt out}  & {\em value} & Pointer to data to write.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+All configuration data can be found in the documentation of the slave\par
+ 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if success other wise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Read data for drive 0 on slave position 2.\par
+\char`\"{}\-Cfg.\-Ec\-Write\-So\-E(2,0,0x1000,2)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em slave\-Position} & Slave position. \\
+\hline
+{\em drive\-No} & Drive number. \\
+\hline
+{\em idn} & So\-E I\-D\-N (see ecrt\-\_\-slave\-\_\-config\-\_\-idn()). \\
+\hline
+{\em byte\-Size} & Size of data to write. \\
+\hline
+{\em value} & Pointer to data to write. \\
+\hline
+\end{DoxyParams}
+\hypertarget{ecmcEthercat_8h_a466a970b1bf11e7a7cfaaa44d8018aae}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!link\-Ec\-Entry\-To\-Ec\-Status\-Output@{link\-Ec\-Entry\-To\-Ec\-Status\-Output}}
+\index{link\-Ec\-Entry\-To\-Ec\-Status\-Output@{link\-Ec\-Entry\-To\-Ec\-Status\-Output}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{link\-Ec\-Entry\-To\-Ec\-Status\-Output}]{\setlength{\rightskip}{0pt plus 5cm}int link\-Ec\-Entry\-To\-Ec\-Status\-Output (
+\begin{DoxyParamCaption}
+\item[{int}]{slave\-Index, }
+\item[{char $\ast$}]{entry\-I\-D\-String}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a466a970b1bf11e7a7cfaaa44d8018aae}
+
+
+Links an Ether\-C\-A\-T entry to the ethecat master object for hardware status output\par
+. 
+
+The output will be high when the Ether\-C\-A\-T master is without error code and otherwise zero.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Index} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Index = -\/1\-: Used to address the simulation slave. Only two entries are configured, \char`\"{}\-Z\-E\-R\-O\char`\"{} with default value 0 and \char`\"{}\-O\-N\-E\char`\"{} with default value 1.\par
+ slave\-Index = 0..65535\-: Addressing of normal Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em entry\-Id\-String} & String for addressing purpose (see command \char`\"{}\-Cfg.\-Ec\-Add\-Entry\-Complete() for more information\char`\"{}).\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example 1\-: Link an Ether\-C\-A\-T entry configured as \char`\"{}\-O\-U\-T\-P\-U\-T\-\_\-0\char`\"{} in slave 1 as status output for ethercat master.\par
+ \char`\"{}\-Cfg.\-Link\-Ec\-Entry\-To\-Ec\-Status\-Output(1,\char`\"{}O\-U\-T\-P\-U\-T\-\_\-0\char`\"{})\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_a38ca7b0719e2770997ed04374ebfe8b6}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!read\-Ec\-Entry@{read\-Ec\-Entry}}
+\index{read\-Ec\-Entry@{read\-Ec\-Entry}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{read\-Ec\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}int read\-Ec\-Entry (
+\begin{DoxyParamCaption}
+\item[{int}]{slave\-Index, }
+\item[{int}]{entry\-Index, }
+\item[{uint64\-\_\-t $\ast$}]{value}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a38ca7b0719e2770997ed04374ebfe8b6}
+
+
+Read a value from an Ether\-C\-A\-T entry.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Index} & Index of order of added slave (not bus position), see command Ec\-Add\-Slave()).\par
+ \\
+\hline
+\mbox{\tt in}  & {\em entry\-Index} & Index of order of added entry (within slave). \\
+\hline
+\mbox{\tt out}  & {\em value} & Read value (result).\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+the slave\-Index and entry\-Index can be read with the commands \hyperlink{ecmcEthercat_8h_a087c5c9f2cc861a2202d2f7023077e28}{read\-Ec\-Slave\-Index()} and \hyperlink{ecmcEthercat_8h_aa0ce7aef669dc0114a9018c22dd72f3e}{read\-Ec\-Entry\-Index\-I\-D\-String()}.\par
+ 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Read the 2\-:nd added entry (entry\-Index=1) in the 4\-:th added slave (slave\-Index=3).\par
+\char`\"{}\-Read\-Ec\-Entry(3,1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_a00a1013f8514d4ad77c7c998b87ae2e1}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!read\-Ec\-Entry\-I\-D\-String@{read\-Ec\-Entry\-I\-D\-String}}
+\index{read\-Ec\-Entry\-I\-D\-String@{read\-Ec\-Entry\-I\-D\-String}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{read\-Ec\-Entry\-I\-D\-String}]{\setlength{\rightskip}{0pt plus 5cm}int read\-Ec\-Entry\-I\-D\-String (
+\begin{DoxyParamCaption}
+\item[{int}]{slave\-Position, }
+\item[{char $\ast$}]{entry\-I\-D\-String, }
+\item[{uint64\-\_\-t $\ast$}]{value}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a00a1013f8514d4ad77c7c998b87ae2e1}
+
+
+Read a value from an Ether\-C\-A\-T entry addressed by slave\-Bus\-Position and entry\-Id\-String.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Bus\-Position = -\/1\-: Used to address the simulation slave. Only two entries are configured, \char`\"{}\-Z\-E\-R\-O\char`\"{} with default value 0 and \char`\"{}\-O\-N\-E\char`\"{} with default value 1.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of normal Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em entry\-Id\-String} & String for addressing purpose (see command \char`\"{}\-Cfg.\-Ec\-Add\-Entry\-Complete() for more information\char`\"{}).\par
+ \\
+\hline
+\mbox{\tt out}  & {\em value} & Read value (result).\par
+ Note\-: This command should not be used when realtime performance is needed (also see \char`\"{}\-Write\-E\-C\-Entry()\char`\"{} command).\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Read a digital input configured as \char`\"{}\-I\-N\-P\-U\-T\-\_\-0\char`\"{} on slave 1\par
+ \char`\"{}\-Read\-Ec\-Entry\-I\-D\-String(1,\-I\-N\-P\-U\-T\-\_\-0)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_aa0ce7aef669dc0114a9018c22dd72f3e}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!read\-Ec\-Entry\-Index\-I\-D\-String@{read\-Ec\-Entry\-Index\-I\-D\-String}}
+\index{read\-Ec\-Entry\-Index\-I\-D\-String@{read\-Ec\-Entry\-Index\-I\-D\-String}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{read\-Ec\-Entry\-Index\-I\-D\-String}]{\setlength{\rightskip}{0pt plus 5cm}int read\-Ec\-Entry\-Index\-I\-D\-String (
+\begin{DoxyParamCaption}
+\item[{int}]{slave\-Position, }
+\item[{char $\ast$}]{entry\-I\-D\-String, }
+\item[{int $\ast$}]{value}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_aa0ce7aef669dc0114a9018c22dd72f3e}
+
+
+Read the object Index of an entry addressed by slave\-Bus\-Position and entry\-Id\-String.\par
+. 
+
+The first entry added in a slave will receive index 0, then for each added entry, its index will be incremented by one. This index will be returned by this function. This index is needed to address a certain slave with the commands \hyperlink{ecmcEthercat_8h_a38ca7b0719e2770997ed04374ebfe8b6}{read\-Ec\-Entry()} and \hyperlink{ecmcEthercat_8h_a05dbf250f0fcbf439655cc80e8e6a39d}{write\-Ec\-Entry()} (for use in realtime, since these functions address the slave and entry arrays directly via indices).\par
+ \begin{DoxyNote}{Note}
+This is not the same as the entry\-Index in Ec\-Add\-Entry\-Complete().\par
+ 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000052}{Todo}]Change confusing naming of this function. entry\-Index and index of entry is easily confused.\par
+\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Bus\-Position = -\/1\-: Used to address the simulation slave. Only two entries are configured, \char`\"{}\-Z\-E\-R\-O\char`\"{} with default value 0 and \char`\"{}\-O\-N\-E\char`\"{} with default value 1.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of normal Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em entry\-Id\-String} & String for addressing purpose (see command \char`\"{}\-Cfg.\-Ec\-Add\-Entry\-Complete() for more information\char`\"{}).\par
+ \\
+\hline
+\mbox{\tt out}  & {\em value} & Entry index (the order is was added).\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Read a the index of an entry configured as \char`\"{}\-I\-N\-P\-U\-T\-\_\-0\char`\"{} on slave 1\par
+ \char`\"{}\-Read\-Ec\-Entry\-Index\-I\-D\-String(1,\-I\-N\-P\-U\-T\-\_\-0)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_a7770f7e102c1ffb415fab5692c5f1670}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!read\-Ec\-Mem\-Map@{read\-Ec\-Mem\-Map}}
+\index{read\-Ec\-Mem\-Map@{read\-Ec\-Mem\-Map}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{read\-Ec\-Mem\-Map}]{\setlength{\rightskip}{0pt plus 5cm}int read\-Ec\-Mem\-Map (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{mem\-Map\-I\-D\-String, }
+\item[{uint8\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{bytes\-To\-Read, }
+\item[{size\-\_\-t $\ast$}]{bytes\-Read}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a7770f7e102c1ffb415fab5692c5f1670}
+
+
+Read Ether\-C\-A\-T memory map object. 
+
+Fast access of Ether\-C\-A\-T data from E\-P\-I\-C\-S records is possible by linking an Ether\-C\-A\-T memory map to an A\-S\-Y\-N parameter. The memory map objects is most usefull for acquire arrays of data (waveforms).This function is called by the iocsh command\char`\"{}ecmc\-Asyn\-Port\-Driver\-Add\-Parameter()\char`\"{}. For more information see documentation of ecmc\-Asyn\-Port\-Driver\-Add\-Parameter(), \hyperlink{ecmcEthercat_8h_a739e72e2cc45dfbc7473c6728240a660}{ec\-Add\-Mem\-Map()}, \hyperlink{ecmcEthercat_8h_a7770f7e102c1ffb415fab5692c5f1670}{read\-Ec\-Mem\-Map()} and \hyperlink{ecmcEthercat_8h_abcc11ae761e62065e86e822f7616dea0}{ec\-Set\-Entry\-Update\-In\-Realtime()}.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mem\-Map\-I\-D\-String} & String for addressing ethercat entry\-:\par
+ ec.\-mm.$<$memory map=\char`\"{}\char`\"{} id$>$=\char`\"{}\char`\"{}$>$ \\
+\hline
+\mbox{\tt out}  & {\em $\ast$data} & Output data buffer.\par
+$\ast$ \\
+\hline
+\mbox{\tt in}  & {\em bytes\-To\-Read} & Output data buffer size.\par
+$\ast$ \\
+\hline
+\mbox{\tt out}  & {\em bytes\-Read} & Bytes read.\par
+$\ast$\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: mem\-Map\-I\-D\-String for an memory map called \char`\"{}\-A\-I\-\_\-1\-\_\-\-A\-R\-R\-A\-Y\char`\"{}\-: \char`\"{}ec.\-mm.\-A\-I\-\_\-1\-\_\-\-A\-R\-R\-A\-Y\char`\"{}.\par
+
+
+There's no ascii command in ecmc\-Cmd\-Parser.\-c for this method.\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_a087c5c9f2cc861a2202d2f7023077e28}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!read\-Ec\-Slave\-Index@{read\-Ec\-Slave\-Index}}
+\index{read\-Ec\-Slave\-Index@{read\-Ec\-Slave\-Index}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{read\-Ec\-Slave\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int read\-Ec\-Slave\-Index (
+\begin{DoxyParamCaption}
+\item[{int}]{slave\-Position, }
+\item[{int $\ast$}]{value}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a087c5c9f2cc861a2202d2f7023077e28}
+
+
+Read the object Index of an slave addressed by slave\-Bus\-Position.\par
+. 
+
+The first slave added in will receive index 0, then for each added slave, its index will be incremented by one. This index will be returned by this function. This index is needed to address a certain slave with the commands \hyperlink{ecmcEthercat_8h_a38ca7b0719e2770997ed04374ebfe8b6}{read\-Ec\-Entry()} and \hyperlink{ecmcEthercat_8h_a05dbf250f0fcbf439655cc80e8e6a39d}{write\-Ec\-Entry()} (for use in realtime, since these functions address the slave and entry arrays directly via indices).\par
+ \begin{DoxyNote}{Note}
+slave\-Index and slave\-Bus\-Position is not the same.\par
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Bus\-Position = -\/1\-: Used to address the simulation slave. Only two entries are configured, \char`\"{}\-Z\-E\-R\-O\char`\"{} with default value 0 and \char`\"{}\-O\-N\-E\char`\"{} with default value 1.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of normal Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Read the slave index of the slave with bus position 5.\par
+ \char`\"{}\-Read\-Ec\-Slave\-Index(5)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_a05dbf250f0fcbf439655cc80e8e6a39d}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!write\-Ec\-Entry@{write\-Ec\-Entry}}
+\index{write\-Ec\-Entry@{write\-Ec\-Entry}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{write\-Ec\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}int write\-Ec\-Entry (
+\begin{DoxyParamCaption}
+\item[{int}]{slave\-Index, }
+\item[{int}]{entry\-Index, }
+\item[{uint64\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_a05dbf250f0fcbf439655cc80e8e6a39d}
+
+
+Writes a value to an Ether\-C\-A\-T entry.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Index} & Index of order of added slave (not bus position), see command Ec\-Add\-Slave()).\par
+ \\
+\hline
+\mbox{\tt in}  & {\em entry\-Index} & Index of order of added entry (within slave). \\
+\hline
+\mbox{\tt in}  & {\em value} & Value to be written.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+the slave\-Index and entry\-Index can be read with the commands \hyperlink{ecmcEthercat_8h_a087c5c9f2cc861a2202d2f7023077e28}{read\-Ec\-Slave\-Index()} and \hyperlink{ecmcEthercat_8h_aa0ce7aef669dc0114a9018c22dd72f3e}{read\-Ec\-Entry\-Index\-I\-D\-String()}.\par
+ 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Write a 0 to the 2\-:nd added entry (entry\-Index=1) in the 4\-:th added slave (slave\-Index=3).\par
+ \char`\"{}\-Write\-Ec\-Entry(3,1,0)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcEthercat_8h_aaaaf1cfc9281ba8f7707ed7f8ad5d44f}{\index{ecmc\-Ethercat.\-h@{ecmc\-Ethercat.\-h}!write\-Ec\-Entry\-I\-D\-String@{write\-Ec\-Entry\-I\-D\-String}}
+\index{write\-Ec\-Entry\-I\-D\-String@{write\-Ec\-Entry\-I\-D\-String}!ecmcEthercat.h@{ecmc\-Ethercat.\-h}}
+\subsubsection[{write\-Ec\-Entry\-I\-D\-String}]{\setlength{\rightskip}{0pt plus 5cm}int write\-Ec\-Entry\-I\-D\-String (
+\begin{DoxyParamCaption}
+\item[{int}]{slave\-Bus\-Position, }
+\item[{char $\ast$}]{entry\-Id\-String, }
+\item[{uint64\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)}}\label{ecmcEthercat_8h_aaaaf1cfc9281ba8f7707ed7f8ad5d44f}
+
+
+Writes a value to an Ether\-C\-A\-T entry addressed by slave\-Bus\-Position and entry\-Id\-String.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Bus\-Position = -\/1\-: Used to address the simulation slave. Only two entries are configured, \char`\"{}\-Z\-E\-R\-O\char`\"{} with default value 0 and \char`\"{}\-O\-N\-E\char`\"{} with default value 1.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of normal Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em entry\-Id\-String} & String for addressing purpose (see command \char`\"{}\-Cfg.\-Ec\-Add\-Entry\-Complete() for more information\char`\"{}).\par
+ \\
+\hline
+\mbox{\tt in}  & {\em value} & Value to be written.\par
+ Note\-: This command should not be used when realtime performance is needed (also see \char`\"{}\-Write\-E\-C\-Entry()\char`\"{} command).\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Write a 1 to a digital output configured as \char`\"{}\-O\-U\-T\-P\-U\-T\-\_\-0\char`\"{} on slave 1\par
+ \char`\"{}\-Cfg.\-Write\-Ec\-Entry\-I\-D\-String(1,\-O\-U\-T\-P\-U\-T\-\_\-1,1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}

@@ -1,0 +1,806 @@
+\hypertarget{ecmcPLC_8h}{\section{/home/anderssandstrom/sources/e3-\/ecmc/ecmc/dev\-Ecmc\-Sup/plc/ecmc\-P\-L\-C.h File Reference}
+\label{ecmcPLC_8h}\index{/home/anderssandstrom/sources/e3-\/ecmc/ecmc/dev\-Ecmc\-Sup/plc/ecmc\-P\-L\-C.\-h@{/home/anderssandstrom/sources/e3-\/ecmc/ecmc/dev\-Ecmc\-Sup/plc/ecmc\-P\-L\-C.\-h}}
+}
+
+
+P\-L\-C commands.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries C\-H\-E\-C\-K\-\_\-\-P\-L\-C\-S\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}()
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{ecmcPLC_8h_a5f4ee2733c7b9f0d5ef88c6fe3cf5e43}{create\-P\-L\-C} (int index, double cycle\-Time, int axis\-P\-L\-C)
+\begin{DoxyCompactList}\small\item\em Create a P\-L\-C object called.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcPLC_8h_a04317e4b64aa09408e4746f33fa4b143}{delete\-P\-L\-C} (int index)
+\begin{DoxyCompactList}\small\item\em Delete P\-L\-C.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcPLC_8h_ad38da843bcb103392fc2fda9ab4771a0}{set\-P\-L\-C\-Expr} (int index, char $\ast$expr)
+\begin{DoxyCompactList}\small\item\em Set P\-L\-C expression.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcPLC_8h_aca10b47823e6e7d3ed3e2f0ed736210c}{append\-P\-L\-C\-Expr} (int index, char $\ast$expr)
+\begin{DoxyCompactList}\small\item\em Append Line to P\-L\-C expression.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcPLC_8h_a9275d2f751662f7cc03945bbf937b207}{load\-P\-L\-C\-File} (int index, char $\ast$file\-Name)
+\begin{DoxyCompactList}\small\item\em Load P\-L\-C file.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcPLC_8h_a09f95ea6c78068c378c1f0aee43432df}{write\-P\-L\-C\-Var} (int index, const char $\ast$var\-Name, double value)
+\begin{DoxyCompactList}\small\item\em Write to P\-L\-C variable.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcPLC_8h_af347bd187790443e506faf9e0b1a1426}{read\-P\-L\-C\-Var} (int index, const char $\ast$var\-Name, double $\ast$value)
+\begin{DoxyCompactList}\small\item\em Read P\-L\-C variable.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcPLC_8h_ab6c4e81ecbb2d41f3993d730c7e4028b}{clear\-P\-L\-C\-Expr} (int index)
+\begin{DoxyCompactList}\small\item\em Clear P\-L\-C expression.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcPLC_8h_a1498ad11e69f59cd3f053c5e9c91785d}{compile\-P\-L\-C\-Expr} (int index)
+\begin{DoxyCompactList}\small\item\em Compile P\-L\-C expression.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcPLC_8h_a7b66070286742c1c2cf224658a5ed4a7}{set\-P\-L\-C\-Enable} (int index, int enable)
+\begin{DoxyCompactList}\small\item\em Set enable of P\-L\-C.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcPLC_8h_a998968f5bd8716703dbe4edce4e9bf16}{get\-P\-L\-C\-Enable} (int index, int $\ast$enabled)
+\begin{DoxyCompactList}\small\item\em Set enable of P\-L\-C.\par
+. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{ecmcPLC_8h_aa76a70f5e97a108444eb3730462543c8}{get\-P\-L\-C\-Expr} (int axis\-Index, int $\ast$error)
+\begin{DoxyCompactList}\small\item\em Get P\-L\-C expression.\par
+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+P\-L\-C commands. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ecmcPLC_8h_a907e20f84bec299a1ee2c4ca2660d713}{\index{ecmc\-P\-L\-C.\-h@{ecmc\-P\-L\-C.\-h}!C\-H\-E\-C\-K\-\_\-\-P\-L\-C\-S\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R@{C\-H\-E\-C\-K\-\_\-\-P\-L\-C\-S\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}}
+\index{C\-H\-E\-C\-K\-\_\-\-P\-L\-C\-S\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R@{C\-H\-E\-C\-K\-\_\-\-P\-L\-C\-S\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}!ecmcPLC.h@{ecmc\-P\-L\-C.\-h}}
+\subsubsection[{C\-H\-E\-C\-K\-\_\-\-P\-L\-C\-S\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-E\-C\-K\-\_\-\-P\-L\-C\-S\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ecmcPLC_8h_a907e20f84bec299a1ee2c4ca2660d713}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                             \(\backslash\)
+  if (!plcs) \{                                                                \(\backslash\)
+    return ERROR\_MAIN\_PLCS\_NULL;                                              \(\backslash\)
+  \}                                                                           \(\backslash\)
+\}
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\hypertarget{ecmcPLC_8h_aca10b47823e6e7d3ed3e2f0ed736210c}{\index{ecmc\-P\-L\-C.\-h@{ecmc\-P\-L\-C.\-h}!append\-P\-L\-C\-Expr@{append\-P\-L\-C\-Expr}}
+\index{append\-P\-L\-C\-Expr@{append\-P\-L\-C\-Expr}!ecmcPLC.h@{ecmc\-P\-L\-C.\-h}}
+\subsubsection[{append\-P\-L\-C\-Expr}]{\setlength{\rightskip}{0pt plus 5cm}int append\-P\-L\-C\-Expr (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{char $\ast$}]{expr}
+\end{DoxyParamCaption}
+)}}\label{ecmcPLC_8h_aca10b47823e6e7d3ed3e2f0ed736210c}
+
+
+Append Line to P\-L\-C expression.\par
+. 
+
+Append one line of P\-L\-C Code. Code syntax is defined on exprtk website.\par
+Variables that can be used are described below.\par
+ Compile will be performed automatically just before going to runtime during\par
+validation.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & P\-L\-C index.\par
+\\
+\hline
+\mbox{\tt in}  & {\em expr} & Expression.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ Accessible variables in code\-:
+\begin{DoxyEnumerate}
+\item static.$<$varname$>$ Static variable. Initiated to 0. (rw)\par
+ Access only in the P\-L\-C where defined.\par
+ Will keep value between execution\par
+ loops.\par
+
+\item global.$<$varname$>$ Global variable. Initiated to 0. (rw)\par
+ Access from all P\-L\-Cs.\par
+ Will keep value between execution\par
+ loops.\par
+
+\item var $<$varname$>$ Local variable (exprtk syntax) (rw)\par
+ Will N\-O\-T keep value between\par
+ execution loops.\par
+ Ether\-C\-A\-T data\-:
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item ec$<$ecid$>$.\-s$<$sid$>$.$<$alias$>$.$<$bitid$>$ ethetcat data (rw)\par
+ ecid\-: ethercat master index\par
+ sid\-: ethercat slave bus position\par
+ alias\-: entry name as defined in\par
+ "Cfg.\-Ec\-Add\-Entry\-Complete()\par
+ bitid\-: bit index (optional)\par
+ Motion variables\-:
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item ax$<$id$>$.\-id axis id (ro)\par
+
+\item ax$<$id$>$.\-reset reset axis error (rw)\par
+
+\item ax$<$id$>$.\-counter execution counter (ro)\par
+
+\item ax$<$id$>$.\-error error (ro)\par
+
+\item ax$<$id$>$.\-enc.\-actpos actual position (ro)\par
+
+\item ax$<$id$>$.\-enc.\-actvel actual velocity (ro)\par
+
+\item ax$<$id$>$.\-enc.\-rawpos actual raw position (ro)\par
+
+\item ax$<$id$>$.\-enc.\-source internal source or expressions (ro)\par
+ source = 0\-: internal encoder\par
+ source $>$ 0\-: actual pos from expr\par
+
+\item ax$<$id$>$.\-enc.\-homed encoder homed (rw)\par
+
+\item ax$<$id$>$.\-enc.\-homepos homing position (rw)\par
+
+\item ax$<$id$>$.\-traj.\-setpos curent trajectory setpoint (ro)\par
+
+\item ax$<$id$>$.\-traj.\-targetpos target position (rw)\par
+
+\item ax$<$id$>$.\-traj.\-targetvel target velocity setpoint (rw)\par
+
+\item ax$<$id$>$.\-traj.\-targetacc target acceleration setpoint (rw)\par
+
+\item ax$<$id$>$.\-traj.\-targetdec target deceleration setpoint (rw)\par
+
+\item ax$<$id$>$.\-traj.\-setvel current velocity setpoint (ro)\par
+
+\item ax$<$id$>$.\-traj.\-setvelffraw feed forward raw velocity (ro)\par
+
+\item ax$<$id$>$.\-traj.\-command command (rw)\par
+ command=1\-: move velocity\par
+ command=2\-: move rel. pos\par
+ command=3\-: move abs. pos\par
+ command=10\-: homing\par
+
+\item ax$<$id$>$.\-traj.\-cmddata cmddat. Homing procedure\par
+ only valid if ax$<$id$>$.\-traj.\-command=10\par
+ cmddata=1 \-: ref low limit\par
+ cmddata=2 \-: ref high limit\par
+ cmddata=3 \-: ref home sensor\par
+ (via low limit)\par
+ cmddata=4 \-: ref home sensor\par
+ (via high limit)\par
+ cmddata=5 \-: ref center of home sensor\par
+ (via low limit)\par
+ cmddata=6 \-: ref center of home sensor\par
+ (via high limit)\par
+ cmddata=15 \-: direct homing\par
+ cmddata=21 \-: ref partly abs. encoder\par
+ (via low limit).\par
+ ref at abs bits.\par
+ over/under-\/flow.\par
+. cmddata=22 \-: ref partly abs. encoder\par
+ (via high limit).\par
+ ref at abs bits.\par
+ over/under-\/flow.\par
+.
+\item ax$<$id$>$.\-traj.\-source internal source or expressions (ro)\par
+ source = 0\-: internal traj\par
+ source $>$ 0\-: setpoints from expr\par
+
+\item ax$<$id$>$.\-traj.\-execute execute motion command (rw)\par
+
+\item ax$<$id$>$.\-traj.\-busy axis busy (ro)\par
+
+\item ax$<$id$>$.\-traj.\-dir axis setpoint direction (ro)\par
+ ax$<$id$>$.\-traj.\-dir$>$0\-: forward\par
+ ax$<$id$>$.\-traj.\-dir$<$0\-: backward\par
+ ax$<$id$>$.\-traj.\-dir=0\-: standstill\par
+
+\item ax$<$id$>$.\-cntrl.\-error actual controller error (ro)\par
+
+\item ax$<$id$>$.\-cntrl.\-poserror actual position error (ro)\par
+
+\item ax$<$id$>$.\-cntrl.\-output actual controller output (ro)\par
+
+\item ax$<$id$>$.\-drv.\-setvelraw actual raw velocity setpoint (ro)\par
+
+\item ax$<$id$>$.\-drv.\-enable enable drive command (rw)\par
+
+\item ax$<$id$>$.\-drv.\-enabled drive enabled (ro)\par
+
+\item ax$<$id$>$.\-seq.\-state sequence state (homing) (ro)\par
+
+\item ax$<$id$>$.\-mon.\-ilock motion interlock (both dir) (rw)\par
+ ax$<$id$>$.\-mon.\-ilock=1\-: motion allowed\par
+ ax$<$id$>$.\-mon.\-ilock=0\-: motion not allowed\par
+
+\item ax$<$id$>$.\-mon.\-ilockbwd motion interlock bwd dir (rw)\par
+ ax$<$id$>$.\-mon.\-ilockbwd=1\-: motion allowed\par
+ ax$<$id$>$.\-mon.\-ilockbwd=0\-: motion not allowed\par
+
+\item ax$<$id$>$.\-mon.\-ilockfwd motion interlock fwd dir (rw)\par
+ ax$<$id$>$.\-mon.\-ilockfwd=1\-: motion allowed\par
+ ax$<$id$>$.\-mon.\-ilockfwd=0\-: motion not allowedn
+\item ax$<$id$>$.\-mon.\-attarget axis at taget (ro)\par
+
+\item ax$<$id$>$.\-mon.\-lowlim low limit switch (ro)\par
+
+\item ax$<$id$>$.\-mon.\-highlim high limit switch (ro)\par
+
+\item ax$<$id$>$.\-mon.\-homesensor home sensor (ro)\par
+
+\item ax$<$id$>$.\-mon.\-lowsoftlim low soft limit (rw)\par
+
+\item ax$<$id$>$.\-mon.\-highsoftlim high soft limit (rw)\par
+
+\item ax$<$id$>$.\-mon.\-lowsoftlimenable low soft limit enable (rw)\par
+
+\item ax$<$id$>$.\-mon.\-highsoftlimenable high soft limit enable (rw)\par
+
+\item ax$<$id$>$.\-blockcom Enables/disables \char`\"{}set\char`\"{} commands (rw)\par
+ via command parser (ascii commands)\par
+ Statuses can still be read.\par
+ Exceptions (\char`\"{}set\char`\"{}-\/commands) that will work\-:
+\begin{DoxyItemize}
+\item \char`\"{}\-Stop\-Motion(axid)\char`\"{}
+\item \char`\"{}\-Cfg.\-Set\-Axis\-Block\-Com(axid,block)\char`\"{}
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+\end{DoxyReturn}
+P\-L\-C variables\-:
+\begin{DoxyEnumerate}
+\item plc$<$id$>$.\-enable plc enable (rw)\par
+ (end exe with \char`\"{}plc$<$id$>$.\-enable\-:=0\#\char`\"{}\par
+ Could be usefull for startup\par
+ sequences)\par
+
+\item plc$<$id$>$.\-error plc error (rw)\par
+ Will be forwarded to user as\par
+ controller error.\par
+
+\item plc$<$id$>$.\-scantime plc sample time in seconds (ro)\par
+
+\item plc$<$id$>$.\-firstscan true during first plc scan only (ro)\par
+ usefull for initiations of variables\par
+ Data Storage variables\-:
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item ds$<$id$>$.\-size Set/get size of data storage (rw)\par
+ Set will clear the data storage\par
+
+\item ds$<$id$>$.\-append Add new data at end (rw)\par
+ Current position index will be increased
+\item ds$<$id$>$.\-data Set/get data ar current position (rw)\par
+
+\item ds$<$id$>$.\-index Set/get current position index (rw)\par
+
+\item ds$<$id$>$.\-error Data storage class error (ro)\par
+
+\item ds$<$id$>$.\-clear Data buffer clear (set to zero) (ro)\par
+
+\item ds$<$id$>$.\-full True if data storage is full (ro)\par
+ Function Lib\-: Ether\-C\-A\-T
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item retvalue = ec\-\_\-set\-\_\-bit( 
+\end{DoxyEnumerate}
+
+, \-: Value to change $<$bitindex$>$ \-: Bit index ); Sets bit at bitindex position of value. Returns the new value.\par
+
+\begin{DoxyEnumerate}
+\item retvalue = ec\-\_\-clr\-\_\-bit( 
+\end{DoxyEnumerate}
+
+, \-: Value to change $<$bitindex$>$ \-: Bit index ); Clears bit at bitindex position of value. Returns the new value.\par
+
+\begin{DoxyEnumerate}
+\item retvalue = ec\-\_\-flp\-\_\-bit( 
+\end{DoxyEnumerate}
+
+, \-: Value to change $<$bitindex$>$ \-: Bit index ); Flips bit at bitindex position of value. Returns the new value.\par
+
+\begin{DoxyEnumerate}
+\item retvalue = ec\-\_\-chk\-\_\-bit( 
+\end{DoxyEnumerate}
+
+, \-: Value to change $<$bitindex$>$ \-: Bit index ); Checks bit at bitindex position of value. Returns the value of bit.\par
+
+\begin{DoxyEnumerate}
+\item retvalue=ec\-\_\-get\-\_\-err()\-: Returns error code from last lib call.\par
+ Function Lib\-: Motion
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item retvalue = mc\-\_\-move\-\_\-abs( $<$ax\-Index$>$, \-: Axis index\par
+ $<$execute$>$, \-: Trigger\par
+ $<$pos$>$, \-: Target position\par
+ $<$vel$>$, \-: Target velocity\par
+ $<$acc$>$, \-: Acceleration\par
+ $<$dec$>$ \-: Deceleration\par
+ )\-: Absolute motion of axis.\par
+ Motion is triggerd with a positive edge on $<$execute$>$ input.\par
+ returns 0 if success or error code.\par
+
+\item retvalue = mc\-\_\-move\-\_\-rel( $<$ax\-Index$>$, \-: Axis index\par
+ $<$execute$>$, \-: Trigger\par
+ $<$pos$>$, \-: Target position\par
+ $<$vel$>$, \-: Target velocity\par
+ $<$acc$>$, \-: Acceleration\par
+ $<$dec$>$ \-: Deceleration\par
+ );
+
+Relative motion of axis $<$ax\-Index$>$.\par
+ Motion is triggerd with a positive edge on $<$execute$>$ input.\par
+ returns 0 if success or error code.\par
+
+\item retvalue = mc\-\_\-move\-\_\-vel( $<$ax\-Index$>$, \-: Axis index\par
+ $<$execute$>$, \-: Trigger\par
+ $<$vel$>$, \-: Target velocity\par
+ $<$acc$>$, \-: Acceleration\par
+ $<$dec$>$ \-: Deceleration\par
+ ); Constant velocity motion of axis $<$ax\-Index$>$.\par
+ Motion is triggerd with a positive edge on $<$execute$>$ input.\par
+ returns 0 if success or error code.\par
+
+\item retvalue = mc\-\_\-home( $<$ax\-Index$>$, \-: Axis index\par
+ $<$execute$>$, \-: Trigger\par
+ $<$seq\-Id$>$, \-: Motion sequence\par
+ $<$vel\-Twoards\-Cam$>$, \-: Target Velocity twords cam\par
+ $<$vel\-Off\-Cam$>$ \-: Target velocity off cam\par
+ ); Perform a homing sequence of axis $<$ax\-Index$>$.\par
+ Motion is triggerd with a positive edge on $<$execute$>$ input.\par
+ returns 0 if success or error code.\par
+
+\item retvalue = mc\-\_\-halt( $<$ax\-Index$>$, \-: Axis index\par
+ $<$execute$>$, \-: Trigger\par
+ ); Stop motion of axis $<$ax\-Index$>$.\par
+ Motion is triggerd with a positive edge on $<$execute$>$ input.\par
+ returns 0 if success or error code.\par
+
+\item retvalue = mc\-\_\-power( $<$ax\-Index$>$, \-: Axis index\par
+ $<$enable$>$, \-: Enable power\par
+ ); Enable power of axis $<$ax\-Index$>$.\par
+ Motion is triggerd with a positive edge on $<$execute$>$ input.\par
+ returns 0 if success or error code.\par
+
+\item retvalue = mc\-\_\-get\-\_\-err(); Returns error code for last lib call.\par
+ Function Lib\-: Data Storage
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item retvalue = ds\-\_\-append\-\_\-data( $<$ds\-Index$>$, \-: Data storage index\par
+ $<$data$>$, \-: Data\par
+ ); Append data to data storage.\par
+ returns 0 if success or error code.\par
+
+\item retvalue = ds\-\_\-clear\-\_\-data( $<$ds\-Index$>$, \-: Data storage index\par
+ ); Clear data to data storage.\par
+ returns 0 if success or error code.\par
+
+\item retvalue = ds\-\_\-get\-\_\-data( $<$ds\-Index$>$, \-: Data storage index\par
+ $<$buffer\-Index$>$, \-: Buffer index\par
+ ); Returns data from buffer.\par
+
+\item retvalue = ds\-\_\-set\-\_\-data( $<$ds\-Index$>$, \-: Data storage index\par
+ $<$buffer\-Index$>$, \-: Buffer index\par
+ ); Sets data in data storage buffer.\par
+ returns 0 if success or error code.\par
+
+\item retvalue = ds\-\_\-get\-\_\-buff\-\_\-id( $<$ds\-Index$>$, \-: Data storage index\par
+ ); Returns current buffer index.\par
+
+\item retvalue = ds\-\_\-set\-\_\-buff\-\_\-id( $<$ds\-Index$>$, \-: Data storage index\par
+ $<$buffer\-Index$>$, \-: Buffer index\par
+ ); Sets current buffer index in data storage buffer.\par
+ returns 0 if success or error code.\par
+
+\item retvalue = ds\-\_\-is\-\_\-full( $<$ds\-Index$>$, \-: Data storage index\par
+ ); Returns true if buffer is full.\par
+
+\item retvalue = ds\-\_\-get\-\_\-size( $<$ds\-Index$>$, \-: Data storage index\par
+ ); Returns buffer size of data storage.\par
+
+\item retvalue = ds\-\_\-get\-\_\-err() Returns error code for last lib call.\par
+
+\item retvalue = ds\-\_\-push\-\_\-asyn( $<$ds\-Index$>$, \-: Data storage index\par
+ ); Push data array to epics. (usefull if asyn param sample time\par
+ is set to -\/1).\par
+
+\item retvalue = ds\-\_\-get\-\_\-avg( $<$ds\-Index$>$, \-: Data storage index\par
+ ); Returns average of the values in the data storage.\par
+
+\item retvalue = ds\-\_\-get\-\_\-min( $<$ds\-Index$>$, \-: Data storage index\par
+ ); Returns minimum of the values in the data storage.\par
+
+\item retvalue = ds\-\_\-get\-\_\-max( $<$ds\-Index$>$, \-: Data storage index\par
+ ); Returns maximum of the values in the data storage.\par
+ \begin{DoxyNote}{Note}
+Pipe sign \char`\"{}$|$\char`\"{} should be used instead of \char`\"{};\char`\"{} This because asyn\-Octet interface uses \char`\"{};\char`\"{} as command delimiter\par
+.
+
+Example\-: Add one line of P\-L\-C code to P\-L\-C 5 \char`\"{}ec0.\-s1.\-O\-U\-T\-P\-I\-N\-\_\-1.\-0=ec0.\-s2.\-I\-N\-P\-I\-N\-\_\-3.\-0\textbackslash{}n
+\char`\"{}Cfg.\-Append\-P\-L\-C\-Expr(5,ec0.\-s1.\-O\-U\-T\-P\-I\-N\-\_\-1.\-0=ec0.\-s2.\-I\-N\-P\-I\-N\-\_\-3.\-0$|$)" //\-Command string to ecmc\-Cmd\-Parser.\-c.\par
+ 
+
+Example\-: Add code by plc file to P\-L\-C 5 (prefered solution, the \char`\"{};\char`\"{} can\par
+ be used)\-:\par
+\char`\"{}\-Cfg.\-Load\-P\-L\-C\-File(5,$<$filename with path$>$)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c.\par
+
+\end{DoxyNote}
+
+\end{DoxyEnumerate}\hypertarget{ecmcPLC_8h_ab6c4e81ecbb2d41f3993d730c7e4028b}{\index{ecmc\-P\-L\-C.\-h@{ecmc\-P\-L\-C.\-h}!clear\-P\-L\-C\-Expr@{clear\-P\-L\-C\-Expr}}
+\index{clear\-P\-L\-C\-Expr@{clear\-P\-L\-C\-Expr}!ecmcPLC.h@{ecmc\-P\-L\-C.\-h}}
+\subsubsection[{clear\-P\-L\-C\-Expr}]{\setlength{\rightskip}{0pt plus 5cm}int clear\-P\-L\-C\-Expr (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{ecmcPLC_8h_ab6c4e81ecbb2d41f3993d730c7e4028b}
+
+
+Clear P\-L\-C expression.\par
+. 
+
+Clears all plc code of a P\-L\-C object.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & P\-L\-C index.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Clear code of P\-L\-C 5\par
+\char`\"{}\-Cfg.\-Clear\-P\-L\-C\-Expr(5)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c.\par
+
+\end{DoxyNote}
+\hypertarget{ecmcPLC_8h_a1498ad11e69f59cd3f053c5e9c91785d}{\index{ecmc\-P\-L\-C.\-h@{ecmc\-P\-L\-C.\-h}!compile\-P\-L\-C\-Expr@{compile\-P\-L\-C\-Expr}}
+\index{compile\-P\-L\-C\-Expr@{compile\-P\-L\-C\-Expr}!ecmcPLC.h@{ecmc\-P\-L\-C.\-h}}
+\subsubsection[{compile\-P\-L\-C\-Expr}]{\setlength{\rightskip}{0pt plus 5cm}int compile\-P\-L\-C\-Expr (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{ecmcPLC_8h_a1498ad11e69f59cd3f053c5e9c91785d}
+
+
+Compile P\-L\-C expression.\par
+. 
+
+Compiles code of P\-L\-C object
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & P\-L\-C index.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Compile code of P\-L\-C 5\par
+\char`\"{}\-Cfg.\-Compile\-P\-L\-C(5)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c.\par
+
+\end{DoxyNote}
+\hypertarget{ecmcPLC_8h_a5f4ee2733c7b9f0d5ef88c6fe3cf5e43}{\index{ecmc\-P\-L\-C.\-h@{ecmc\-P\-L\-C.\-h}!create\-P\-L\-C@{create\-P\-L\-C}}
+\index{create\-P\-L\-C@{create\-P\-L\-C}!ecmcPLC.h@{ecmc\-P\-L\-C.\-h}}
+\subsubsection[{create\-P\-L\-C}]{\setlength{\rightskip}{0pt plus 5cm}int create\-P\-L\-C (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{double}]{cycle\-Time, }
+\item[{int}]{axis\-P\-L\-C}
+\end{DoxyParamCaption}
+)}}\label{ecmcPLC_8h_a5f4ee2733c7b9f0d5ef88c6fe3cf5e43}
+
+
+Create a P\-L\-C object called.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & P\-L\-C index number \\
+\hline
+\mbox{\tt in}  & {\em cycle\-Time} & Cycle\-Time in seconds \\
+\hline
+\mbox{\tt in}  & {\em axis\-P\-L\-C} & If P\-L\-C for axis\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Create P\-L\-C at index 0 (executing every 10th cycle).\par
+ \char`\"{}\-Cfg.\-Create\-P\-L\-C(0,9)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+ 
+
+Example\-: Create P\-L\-C at index 0 (executing every cycle).\par
+ \char`\"{}\-Cfg.\-Create\-P\-L\-C(0)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcPLC_8h_a04317e4b64aa09408e4746f33fa4b143}{\index{ecmc\-P\-L\-C.\-h@{ecmc\-P\-L\-C.\-h}!delete\-P\-L\-C@{delete\-P\-L\-C}}
+\index{delete\-P\-L\-C@{delete\-P\-L\-C}!ecmcPLC.h@{ecmc\-P\-L\-C.\-h}}
+\subsubsection[{delete\-P\-L\-C}]{\setlength{\rightskip}{0pt plus 5cm}int delete\-P\-L\-C (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{ecmcPLC_8h_a04317e4b64aa09408e4746f33fa4b143}
+
+
+Delete P\-L\-C.\par
+. 
+
+Delete P\-L\-C object ethercat entries are available.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & P\-L\-C index.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Delete P\-L\-C 4\par
+\char`\"{}\-Cfg.\-Delete\-P\-L\-C(4);\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c.\par
+
+\end{DoxyNote}
+\hypertarget{ecmcPLC_8h_a998968f5bd8716703dbe4edce4e9bf16}{\index{ecmc\-P\-L\-C.\-h@{ecmc\-P\-L\-C.\-h}!get\-P\-L\-C\-Enable@{get\-P\-L\-C\-Enable}}
+\index{get\-P\-L\-C\-Enable@{get\-P\-L\-C\-Enable}!ecmcPLC.h@{ecmc\-P\-L\-C.\-h}}
+\subsubsection[{get\-P\-L\-C\-Enable}]{\setlength{\rightskip}{0pt plus 5cm}int get\-P\-L\-C\-Enable (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{int $\ast$}]{enabled}
+\end{DoxyParamCaption}
+)}}\label{ecmcPLC_8h_a998968f5bd8716703dbe4edce4e9bf16}
+
+
+Set enable of P\-L\-C.\par
+. 
+
+Enable a P\-L\-C.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & P\-L\-C index.\par
+\\
+\hline
+\mbox{\tt out}  & {\em enabled} & Enabled.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Get enable for P\-L\-C 5\par
+\char`\"{}\-Get\-P\-L\-C\-Enable(5)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c.\par
+
+\end{DoxyNote}
+\hypertarget{ecmcPLC_8h_aa76a70f5e97a108444eb3730462543c8}{\index{ecmc\-P\-L\-C.\-h@{ecmc\-P\-L\-C.\-h}!get\-P\-L\-C\-Expr@{get\-P\-L\-C\-Expr}}
+\index{get\-P\-L\-C\-Expr@{get\-P\-L\-C\-Expr}!ecmcPLC.h@{ecmc\-P\-L\-C.\-h}}
+\subsubsection[{get\-P\-L\-C\-Expr}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ get\-P\-L\-C\-Expr (
+\begin{DoxyParamCaption}
+\item[{int}]{axis\-Index, }
+\item[{int $\ast$}]{error}
+\end{DoxyParamCaption}
+)}}\label{ecmcPLC_8h_aa76a70f5e97a108444eb3730462543c8}
+
+
+Get P\-L\-C expression.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em plc\-Index} & Axis index.\par
+\\
+\hline
+\mbox{\tt out}  & {\em error} & Error code.\par
+error = 0\-: No error.\par
+error $>$ 0\-: Error.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to transformation expression.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Get P\-L\-C expression for plc\-Index 5.\par
+\char`\"{}get\-P\-L\-C\-Expr(5)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c.\par
+
+\end{DoxyNote}
+\hypertarget{ecmcPLC_8h_a9275d2f751662f7cc03945bbf937b207}{\index{ecmc\-P\-L\-C.\-h@{ecmc\-P\-L\-C.\-h}!load\-P\-L\-C\-File@{load\-P\-L\-C\-File}}
+\index{load\-P\-L\-C\-File@{load\-P\-L\-C\-File}!ecmcPLC.h@{ecmc\-P\-L\-C.\-h}}
+\subsubsection[{load\-P\-L\-C\-File}]{\setlength{\rightskip}{0pt plus 5cm}int load\-P\-L\-C\-File (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{char $\ast$}]{file\-Name}
+\end{DoxyParamCaption}
+)}}\label{ecmcPLC_8h_a9275d2f751662f7cc03945bbf937b207}
+
+
+Load P\-L\-C file.\par
+. 
+
+Load file with P\-L\-C code to P\-L\-C.\par
+For syntax look at \char`\"{}append\-P\-L\-C\-Expr()\char`\"{}.\par
+P\-L\-C file will be enabled. Compile will be performed automatically just\par
+before going to runtime during validation.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & P\-L\-C index.\par
+\\
+\hline
+\mbox{\tt in}  & {\em file\-Name} & File name.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Load plc fil with code to P\-L\-C 5\par
+\char`\"{}\-Cfg.\-Load\-P\-L\-C\-File(5,/home/iocuser/dummy\-P\-L\-C.\-plc)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c.\par
+
+\end{DoxyNote}
+\hypertarget{ecmcPLC_8h_af347bd187790443e506faf9e0b1a1426}{\index{ecmc\-P\-L\-C.\-h@{ecmc\-P\-L\-C.\-h}!read\-P\-L\-C\-Var@{read\-P\-L\-C\-Var}}
+\index{read\-P\-L\-C\-Var@{read\-P\-L\-C\-Var}!ecmcPLC.h@{ecmc\-P\-L\-C.\-h}}
+\subsubsection[{read\-P\-L\-C\-Var}]{\setlength{\rightskip}{0pt plus 5cm}int read\-P\-L\-C\-Var (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{const char $\ast$}]{var\-Name, }
+\item[{double $\ast$}]{value}
+\end{DoxyParamCaption}
+)}}\label{ecmcPLC_8h_af347bd187790443e506faf9e0b1a1426}
+
+
+Read P\-L\-C variable.\par
+. 
+
+\begin{DoxyNote}{Note}
+\-: Only static variables are supported.\par
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & P\-L\-C index.\par
+\\
+\hline
+\mbox{\tt in}  & {\em var\-Name} & Variable name.\par
+\\
+\hline
+\mbox{\tt out}  & {\em value} & Read value.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Read variable static.\-test in plc 5\par
+\char`\"{}\-Read\-P\-L\-C\-Var(5,static.\-test)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c.\par
+
+\end{DoxyNote}
+\hypertarget{ecmcPLC_8h_a7b66070286742c1c2cf224658a5ed4a7}{\index{ecmc\-P\-L\-C.\-h@{ecmc\-P\-L\-C.\-h}!set\-P\-L\-C\-Enable@{set\-P\-L\-C\-Enable}}
+\index{set\-P\-L\-C\-Enable@{set\-P\-L\-C\-Enable}!ecmcPLC.h@{ecmc\-P\-L\-C.\-h}}
+\subsubsection[{set\-P\-L\-C\-Enable}]{\setlength{\rightskip}{0pt plus 5cm}int set\-P\-L\-C\-Enable (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{int}]{enable}
+\end{DoxyParamCaption}
+)}}\label{ecmcPLC_8h_a7b66070286742c1c2cf224658a5ed4a7}
+
+
+Set enable of P\-L\-C.\par
+. 
+
+Enable a P\-L\-C.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & P\-L\-C index.\par
+\\
+\hline
+\mbox{\tt in}  & {\em enable} & Enable.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Set enable for P\-L\-C 5\par
+\char`\"{}\-Cfg.\-Set\-P\-L\-C\-Enable(5,1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c.\par
+
+\end{DoxyNote}
+\hypertarget{ecmcPLC_8h_ad38da843bcb103392fc2fda9ab4771a0}{\index{ecmc\-P\-L\-C.\-h@{ecmc\-P\-L\-C.\-h}!set\-P\-L\-C\-Expr@{set\-P\-L\-C\-Expr}}
+\index{set\-P\-L\-C\-Expr@{set\-P\-L\-C\-Expr}!ecmcPLC.h@{ecmc\-P\-L\-C.\-h}}
+\subsubsection[{set\-P\-L\-C\-Expr}]{\setlength{\rightskip}{0pt plus 5cm}int set\-P\-L\-C\-Expr (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{char $\ast$}]{expr}
+\end{DoxyParamCaption}
+)}}\label{ecmcPLC_8h_ad38da843bcb103392fc2fda9ab4771a0}
+
+
+Set P\-L\-C expression.\par
+. 
+
+The P\-L\-C expression is used for P\-L\-C functionalities.\par
+ See \hyperlink{ecmcPLC_8h_aca10b47823e6e7d3ed3e2f0ed736210c}{append\-P\-L\-C\-Expr()} for more information.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & P\-L\-C index.\par
+\\
+\hline
+\mbox{\tt in}  & {\em expr} & Expression.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Pipe sign \char`\"{}$|$\char`\"{} should be used instead of \char`\"{};\char`\"{} This because asyn\-Octet interface uses \char`\"{};\char`\"{} as command delimiter\par
+.
+
+Example\-: Set expression for P\-L\-C 5 to \char`\"{}ec0.\-s1.\-O\-U\-T\-P\-I\-N\-\_\-1.\-0=ec0.\-s2.\-I\-N\-P\-I\-N\-\_\-3.\-0\textbackslash{}n
+\char`\"{}Cfg.\-Set\-P\-L\-C\-Expr(5)=ec0.\-s1.\-O\-U\-T\-P\-I\-N\-\_\-1.\-0=ec0.\-s2.\-I\-N\-P\-I\-N\-\_\-3.\-0$|$" //\-Command string to ecmc\-Cmd\-Parser.\-c.\par
+
+\end{DoxyNote}
+\hypertarget{ecmcPLC_8h_a09f95ea6c78068c378c1f0aee43432df}{\index{ecmc\-P\-L\-C.\-h@{ecmc\-P\-L\-C.\-h}!write\-P\-L\-C\-Var@{write\-P\-L\-C\-Var}}
+\index{write\-P\-L\-C\-Var@{write\-P\-L\-C\-Var}!ecmcPLC.h@{ecmc\-P\-L\-C.\-h}}
+\subsubsection[{write\-P\-L\-C\-Var}]{\setlength{\rightskip}{0pt plus 5cm}int write\-P\-L\-C\-Var (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{const char $\ast$}]{var\-Name, }
+\item[{double}]{value}
+\end{DoxyParamCaption}
+)}}\label{ecmcPLC_8h_a09f95ea6c78068c378c1f0aee43432df}
+
+
+Write to P\-L\-C variable.\par
+. 
+
+\begin{DoxyNote}{Note}
+\-: Only static variables are supported.\par
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & P\-L\-C index.\par
+\\
+\hline
+\mbox{\tt in}  & {\em var\-Name} & Variable name.\par
+\\
+\hline
+\mbox{\tt in}  & {\em value} & Value to write.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Write 100.\-0 to variable static.\-test in plc 5\par
+\char`\"{}\-Write\-P\-L\-C\-Var(5,static.\-test,100.\-0)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c.\par
+
+\end{DoxyNote}

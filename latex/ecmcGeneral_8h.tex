@@ -1,0 +1,225 @@
+\hypertarget{ecmcGeneral_8h}{\section{/home/anderssandstrom/sources/e3-\/ecmc/ecmc/dev\-Ecmc\-Sup/main/ecmc\-General.h File Reference}
+\label{ecmcGeneral_8h}\index{/home/anderssandstrom/sources/e3-\/ecmc/ecmc/dev\-Ecmc\-Sup/main/ecmc\-General.\-h@{/home/anderssandstrom/sources/e3-\/ecmc/ecmc/dev\-Ecmc\-Sup/main/ecmc\-General.\-h}}
+}
+
+
+General commands.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{ecmcGeneral_8h_a8d545400dc983451d15c362765ca0ad5}{get\-Controller\-Error} ()
+\begin{DoxyCompactList}\small\item\em Returns the controller error code.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcGeneral_8h_a1e7a37377d97dc9a2c8de9134e4f1314}{controller\-Error\-Reset} ()
+\begin{DoxyCompactList}\small\item\em Resets the controller error code.\par
+. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{ecmcGeneral_8h_a7c97a785e0d0614cd9b906b7e344d636}{get\-Error\-String} (int error\-Number)
+\begin{DoxyCompactList}\small\item\em Get axis error code in string format.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcGeneral_8h_afb0d9b195110a0efc9e1fdad179fc175}{validate\-Config} ()
+\begin{DoxyCompactList}\small\item\em Validates the current configuration)". \end{DoxyCompactList}\item 
+int \hyperlink{ecmcGeneral_8h_a101d7a18381cf7b2f8c2ce264bb50f3b}{link\-Ec\-Entry\-To\-Object} (char $\ast$ec\-Path, char $\ast$obj\-Path)
+\begin{DoxyCompactList}\small\item\em Links an Ether\-C\-A\-T entry to an object. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcGeneral_8h_a73903ad7a4e86bdff1d7718c8ad1a42b}{set\-Enable\-Time\-Diag} (int value)
+\begin{DoxyCompactList}\small\item\em Enable printouts of timing information related to the realtime thread.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcGeneral_8h_a3f3c53ab95903c13d56260a74dfcc371}{set\-Enable\-Function\-Call\-Diag} (int value)
+\begin{DoxyCompactList}\small\item\em Enable printouts of which functions in hw\-\_\-motor.\-cpp are being called.\par
+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+General commands. 
+
+\subsection{Function Documentation}
+\hypertarget{ecmcGeneral_8h_a1e7a37377d97dc9a2c8de9134e4f1314}{\index{ecmc\-General.\-h@{ecmc\-General.\-h}!controller\-Error\-Reset@{controller\-Error\-Reset}}
+\index{controller\-Error\-Reset@{controller\-Error\-Reset}!ecmcGeneral.h@{ecmc\-General.\-h}}
+\subsubsection[{controller\-Error\-Reset}]{\setlength{\rightskip}{0pt plus 5cm}int controller\-Error\-Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ecmcGeneral_8h_a1e7a37377d97dc9a2c8de9134e4f1314}
+
+
+Resets the controller error code.\par
+. 
+
+\begin{DoxyReturn}{Returns}
+0
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Reset controller error.\par
+\char`\"{}\-Controller\-Error\-Reset()\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcGeneral_8h_a8d545400dc983451d15c362765ca0ad5}{\index{ecmc\-General.\-h@{ecmc\-General.\-h}!get\-Controller\-Error@{get\-Controller\-Error}}
+\index{get\-Controller\-Error@{get\-Controller\-Error}!ecmcGeneral.h@{ecmc\-General.\-h}}
+\subsubsection[{get\-Controller\-Error}]{\setlength{\rightskip}{0pt plus 5cm}int get\-Controller\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ecmcGeneral_8h_a8d545400dc983451d15c362765ca0ad5}
+
+
+Returns the controller error code.\par
+. 
+
+\begin{DoxyReturn}{Returns}
+current error code of controller.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Get current controller error code.\par
+\char`\"{}\-Get\-Controller\-Error()\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcGeneral_8h_a7c97a785e0d0614cd9b906b7e344d636}{\index{ecmc\-General.\-h@{ecmc\-General.\-h}!get\-Error\-String@{get\-Error\-String}}
+\index{get\-Error\-String@{get\-Error\-String}!ecmcGeneral.h@{ecmc\-General.\-h}}
+\subsubsection[{get\-Error\-String}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ get\-Error\-String (
+\begin{DoxyParamCaption}
+\item[{int}]{error\-Number}
+\end{DoxyParamCaption}
+)}}\label{ecmcGeneral_8h_a7c97a785e0d0614cd9b906b7e344d636}
+
+
+Get axis error code in string format.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em error\-Number} & Error code.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+axis error string.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Get error code of axis 3.\par
+\char`\"{}\-Main.\-M3.\-s\-Error\-Message?\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c.\par
+ 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000051}{Todo}]"Twin\-C\-A\-T syntax. Needs to be changed.\par
+ \end{DoxyRefDesc}
+\hypertarget{ecmcGeneral_8h_a101d7a18381cf7b2f8c2ce264bb50f3b}{\index{ecmc\-General.\-h@{ecmc\-General.\-h}!link\-Ec\-Entry\-To\-Object@{link\-Ec\-Entry\-To\-Object}}
+\index{link\-Ec\-Entry\-To\-Object@{link\-Ec\-Entry\-To\-Object}!ecmcGeneral.h@{ecmc\-General.\-h}}
+\subsubsection[{link\-Ec\-Entry\-To\-Object}]{\setlength{\rightskip}{0pt plus 5cm}int link\-Ec\-Entry\-To\-Object (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ec\-Path, }
+\item[{char $\ast$}]{obj\-Path}
+\end{DoxyParamCaption}
+)}}\label{ecmcGeneral_8h_a101d7a18381cf7b2f8c2ce264bb50f3b}
+
+
+Links an Ether\-C\-A\-T entry to an object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em ec\-Path} & Ether\-C\-A\-T entry path in the following format\-:\par
+ ec$<$master\-Id$>$.\-s$<$slave\-Id$>$.$<$alias$>$.$<$bit\-Id$>$ ec$<$master\-Id$>$.\-s$<$slave\-Id$>$.$<$alias$>$ \\
+\hline
+\mbox{\tt in}  & {\em ax\-Path} & Axis parameter path in the following format\-:\par
+ ax$<$id$>$.\-enc.\-actpos\par
+ ax$<$id$>$.\-drv.\-enable\par
+ ax$<$id$>$.\-drv.\-velocity\par
+ ax$<$id$>$.\-drv.\-enabled\par
+ ax$<$id$>$.\-drv.\-break\par
+ ax$<$id$>$.\-drv.\-reducetorque\par
+ ax$<$id$>$.\-mon.\-lowlim\par
+ ax$<$id$>$.\-mon.\-highlim\par
+ ax$<$id$>$.\-mon.\-homesensor\par
+ ax$<$id$>$.\-mon.\-extinterlock\par
+ ax$<$id$>$.\-health\par
+ ec$<$master\-Id$>$.\-health\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Link an Ether\-C\-A\-T entry configured as \char`\"{}\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-A\-C\-T\char`\"{} in slave 1 as actual position for the encoder of axis 5.\par
+ \char`\"{}\-Cfg.\-Link\-Ec\-Entry\-To\-Object(ec0.\-s1.\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-A\-C\-T,ax5.\-enc.\-actpos)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}
+\end{DoxyNote}
+\hypertarget{ecmcGeneral_8h_a3f3c53ab95903c13d56260a74dfcc371}{\index{ecmc\-General.\-h@{ecmc\-General.\-h}!set\-Enable\-Function\-Call\-Diag@{set\-Enable\-Function\-Call\-Diag}}
+\index{set\-Enable\-Function\-Call\-Diag@{set\-Enable\-Function\-Call\-Diag}!ecmcGeneral.h@{ecmc\-General.\-h}}
+\subsubsection[{set\-Enable\-Function\-Call\-Diag}]{\setlength{\rightskip}{0pt plus 5cm}int set\-Enable\-Function\-Call\-Diag (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}}\label{ecmcGeneral_8h_a3f3c53ab95903c13d56260a74dfcc371}
+
+
+Enable printouts of which functions in hw\-\_\-motor.\-cpp are being called.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em enable} & Enable printouts.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Enable function call diagnostics.\par
+ \char`\"{}\-Cfg.\-Set\-Enable\-Func\-Call\-Diag(1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcGeneral_8h_a73903ad7a4e86bdff1d7718c8ad1a42b}{\index{ecmc\-General.\-h@{ecmc\-General.\-h}!set\-Enable\-Time\-Diag@{set\-Enable\-Time\-Diag}}
+\index{set\-Enable\-Time\-Diag@{set\-Enable\-Time\-Diag}!ecmcGeneral.h@{ecmc\-General.\-h}}
+\subsubsection[{set\-Enable\-Time\-Diag}]{\setlength{\rightskip}{0pt plus 5cm}int set\-Enable\-Time\-Diag (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}}\label{ecmcGeneral_8h_a73903ad7a4e86bdff1d7718c8ad1a42b}
+
+
+Enable printouts of timing information related to the realtime thread.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em enable} & Enable printouts.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Enable printout time diagnostics.\par
+ \char`\"{}\-Cfg.\-Set\-Enable\-Time\-Diag(1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcGeneral_8h_afb0d9b195110a0efc9e1fdad179fc175}{\index{ecmc\-General.\-h@{ecmc\-General.\-h}!validate\-Config@{validate\-Config}}
+\index{validate\-Config@{validate\-Config}!ecmcGeneral.h@{ecmc\-General.\-h}}
+\subsubsection[{validate\-Config}]{\setlength{\rightskip}{0pt plus 5cm}int validate\-Config (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ecmcGeneral_8h_afb0d9b195110a0efc9e1fdad179fc175}
+
+
+Validates the current configuration)". 
+
+\begin{DoxyReturn}{Returns}
+0 if the current configuration is valid for runtime otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Validate configuration.\par
+\char`\"{}\-Cfg.\-Validate\-Config()\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}

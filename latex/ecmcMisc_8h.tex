@@ -1,0 +1,1421 @@
+\hypertarget{ecmcMisc_8h}{\section{/home/anderssandstrom/sources/e3-\/ecmc/ecmc/dev\-Ecmc\-Sup/misc/ecmc\-Misc.h File Reference}
+\label{ecmcMisc_8h}\index{/home/anderssandstrom/sources/e3-\/ecmc/ecmc/dev\-Ecmc\-Sup/misc/ecmc\-Misc.\-h@{/home/anderssandstrom/sources/e3-\/ecmc/ecmc/dev\-Ecmc\-Sup/misc/ecmc\-Misc.\-h}}
+}
+
+
+Misc. commands.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries C\-H\-E\-C\-K\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-L\-I\-S\-T\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}(command\-List\-Index)
+\item 
+\#define {\bfseries C\-H\-E\-C\-K\-\_\-\-E\-V\-E\-N\-T\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}(index\-Event)
+\item 
+\#define {\bfseries C\-H\-E\-C\-K\-\_\-\-S\-T\-O\-R\-A\-G\-E\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}(index\-Storage)
+\item 
+\#define {\bfseries C\-H\-E\-C\-K\-\_\-\-R\-E\-C\-O\-R\-D\-E\-R\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}(index\-Recorder)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{ecmcMisc_8h_aa3202cd4faa9504e97cf19ec08cb90dc}{create\-Event} (int index)
+\begin{DoxyCompactList}\small\item\em Create an event object. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_ace18ea8b9ce1804ae7cf8169e021caec}{link\-Ec\-Entry\-To\-Event} (int index\-Event, int event\-Entry\-Index, int slave\-Bus\-Position, char $\ast$entry\-I\-D\-String, int bit\-Index)
+\begin{DoxyCompactList}\small\item\em Links an Ether\-C\-A\-T entry to an event object. \par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a93bcf19fb8ca068d47a0f29832559472}{set\-Event\-Type} (int index\-Event, int type)
+\begin{DoxyCompactList}\small\item\em Set event type.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a9cfc89f0c39b12ba9d39be61290ac624}{set\-Event\-Sample\-Time} (int index\-Event, int sample\-Time)
+\begin{DoxyCompactList}\small\item\em Set event sampling time (cycle counts).\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a606fe1d11ba1066db1e0abfe53cb6cdd}{set\-Event\-Trigger\-Edge} (int index\-Event, int trigger\-Edge)
+\begin{DoxyCompactList}\small\item\em Set event trigger edge.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a92893c854a8015ba26f78accd6a229ad}{set\-Event\-Enable} (int index\-Event, int enable)
+\begin{DoxyCompactList}\small\item\em Enable event.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a593eccfbc8ebbd0158dbd07f6df07b94}{get\-Event\-Enabled} (int index\-Event, int $\ast$enabled)
+\begin{DoxyCompactList}\small\item\em Get event enabled.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a7b852a27434c35aca0e150197200c75e}{set\-Event\-Enable\-Arm\-Sequence} (int index\-Event, int enable)
+\begin{DoxyCompactList}\small\item\em Enable arm sequence.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_ae384be74cfb4d643d96bcc0d79d000a7}{set\-Event\-Enable\-Printouts} (int index\-Event, int enable)
+\begin{DoxyCompactList}\small\item\em Enable diagnostic printouts from event object.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a4fcd7b664a0d891ca75871e536cd9eb6}{trigger\-Event} (int index\-Event)
+\begin{DoxyCompactList}\small\item\em Force trigger event.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a7b6f4d6a0df897ade7814f0e059d46bc}{arm\-Event} (int index\-Event)
+\begin{DoxyCompactList}\small\item\em Arm event.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a5f66c7d4fdf0db73e6cfa81d48368f89}{create\-Data\-Storage} (int index, int elements, int buffer\-Type)
+\begin{DoxyCompactList}\small\item\em Create a data storage object. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a5c8069db8b96c9ae6fddb342febf79e1}{clear\-Storage} (int index\-Storage)
+\begin{DoxyCompactList}\small\item\em Clear data storage buffer. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a11b716bda7d92a2d2397e666e671bce3}{get\-Storage\-Data\-Index} (int index\-Storage, int $\ast$index)
+\begin{DoxyCompactList}\small\item\em Get current index of data in storage buffer.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_aca60e5e0b2eabc1d557b14c5347c9429}{set\-Storage\-Enable\-Printouts} (int index\-Storage, int enable)
+\begin{DoxyCompactList}\small\item\em Enable diagnostic printouts from data storage object.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_aa831e0863c4b808d0c57d7916e679bc8}{print\-Storage\-Buffer} (int index\-Storage)
+\begin{DoxyCompactList}\small\item\em Print contents of buffer.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a0a19a26500d1de3753a603fea1443942}{read\-Storage\-Buffer} (int index\-Storage, double $\ast$$\ast$data, int $\ast$size)
+\begin{DoxyCompactList}\small\item\em Reads contents of storage buffer.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a2d81085a4c027467963e26281c33667c}{write\-Storage\-Buffer} (int index\-Storage, double $\ast$data, int size)
+\begin{DoxyCompactList}\small\item\em Writes data to storage buffer.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a7e4443afcd740f81023d8a4f58526a04}{append\-Storage\-Buffer} (int index\-Storage, double $\ast$data, int size)
+\begin{DoxyCompactList}\small\item\em Appends data to the end of storage buffer.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_af0e2d242a0720676335ed7a3643a1eca}{set\-Data\-Storage\-Current\-Data\-Index} (int index\-Storage, int position)
+\begin{DoxyCompactList}\small\item\em Set current data index of storage buffer.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a32ee75bde2f4997058adf1e4e6ba2465}{create\-Recorder} (int index\-Recorder)
+\begin{DoxyCompactList}\small\item\em Create recorder object. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a446135d6477072f43c7e1b88bcc93e91}{link\-Storage\-To\-Recorder} (int index\-Storage, int index\-Recorder)
+\begin{DoxyCompactList}\small\item\em Link storage object to recorder object. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a99c30875ea25f275be26990f47b8b2a3}{link\-Ec\-Entry\-To\-Recorder} (int index\-Recorder, int recorder\-Entry\-Index, int slave\-Bus\-Position, char $\ast$entry\-I\-D\-String, int bit\-Index)
+\begin{DoxyCompactList}\small\item\em Links an Ether\-C\-A\-T entry to a recorder object. \par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a7b7830ff6baa10fdf5b430ea63923cb1}{link\-Axis\-Data\-To\-Recorder} (int index\-Recorder, int axis\-Index, int data\-To\-Store)
+\begin{DoxyCompactList}\small\item\em Links an axis data source to a recorder object. \par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a65b26e568f6d53dcf8982884c5975b5b}{set\-Recorder\-Enable} (int index\-Recorder, int enable)
+\begin{DoxyCompactList}\small\item\em Enable recorder.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a8d6325270bff97b12e6c8b00b1f9bc01}{get\-Recorder\-Enabled} (int index\-Recorder, int $\ast$enabled)
+\begin{DoxyCompactList}\small\item\em Get recorder enabled.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a00735d91b5d494d36c6778f54fa7f3f3}{set\-Recorder\-Enable\-Printouts} (int index\-Recorder, int enable)
+\begin{DoxyCompactList}\small\item\em Enable diagnostic printouts from recorder object.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a3d484b4cbaad5b19f974196ca779b93e}{link\-Recorder\-To\-Event} (int index\-Recorder, int index\-Event, int consumer\-Index)
+\begin{DoxyCompactList}\small\item\em Link recorder object to event object.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_ab826ec827ce0c393896ece563eea4b45}{trigger\-Recorder} (int index\-Recorder)
+\begin{DoxyCompactList}\small\item\em Force trigger recorder.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a18622ac46755b384536ac856ace879df}{create\-Command\-List} (int index\-Command\-List)
+\begin{DoxyCompactList}\small\item\em Create a command list object. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a5440844279a74bca47cbc3d4a68412f3}{link\-Command\-List\-To\-Event} (int index\-Command\-List, int index\-Event, int consumer\-Index)
+\begin{DoxyCompactList}\small\item\em Link command list object to event object.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a20e4f60bb1f7fe07bad6c2236a1413fd}{set\-Command\-List\-Enable} (int index\-Command\-List, int enable)
+\begin{DoxyCompactList}\small\item\em Enable command list.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a78e3d0322959ac04995d168710361aff}{set\-Command\-List\-Enable\-Printouts} (int index\-Command\-List, int enable)
+\begin{DoxyCompactList}\small\item\em Enable diagnostic printouts from command list object.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_ab28fbc71aadd1937ec629e4f781b5361}{add\-Command\-List\-Command} (int index\-Command\-List, char $\ast$expr)
+\begin{DoxyCompactList}\small\item\em Add command to command list.\par
+. \end{DoxyCompactList}\item 
+int \hyperlink{ecmcMisc_8h_a467dd3a9b75989dd4a1e07239fda2e27}{trigger\-Command\-List} (int index\-Command\-List)
+\begin{DoxyCompactList}\small\item\em Force trigger command list.\par
+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Misc. commands. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ecmcMisc_8h_a9b74b9e997d0daf452e4e0715eaa866d}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!C\-H\-E\-C\-K\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-L\-I\-S\-T\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R@{C\-H\-E\-C\-K\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-L\-I\-S\-T\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}}
+\index{C\-H\-E\-C\-K\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-L\-I\-S\-T\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R@{C\-H\-E\-C\-K\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-L\-I\-S\-T\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{C\-H\-E\-C\-K\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-L\-I\-S\-T\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-E\-C\-K\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-L\-I\-S\-T\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R(
+\begin{DoxyParamCaption}
+\item[{}]{command\-List\-Index}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a9b74b9e997d0daf452e4e0715eaa866d}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                             \(\backslash\)
+  if (indexCommandList >= ECMC\_MAX\_COMMANDS\_LISTS || indexCommandList < 0) \{  \(\backslash\)
+    LOGERR(\textcolor{stringliteral}{"ERROR: Command list index out of range.\(\backslash\)n"});                      \(\backslash\)
+    return ERROR\_COMMAND\_LIST\_INDEX\_OUT\_OF\_RANGE;                             \(\backslash\)
+  \}                                                                           \(\backslash\)
+  if (commandLists[indexCommandList] == NULL) \{                               \(\backslash\)
+    LOGERR(\textcolor{stringliteral}{"ERROR: Command list object NULL.\(\backslash\)n"});                             \(\backslash\)
+    return ERROR\_COMMAND\_LIST\_NULL;                                           \(\backslash\)
+  \}                                                                           \(\backslash\)
+\}                                                                             \(\backslash\)
+\end{DoxyCode}
+\hypertarget{ecmcMisc_8h_a20fe5caedb545ecdb73b095278904e58}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!C\-H\-E\-C\-K\-\_\-\-E\-V\-E\-N\-T\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R@{C\-H\-E\-C\-K\-\_\-\-E\-V\-E\-N\-T\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}}
+\index{C\-H\-E\-C\-K\-\_\-\-E\-V\-E\-N\-T\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R@{C\-H\-E\-C\-K\-\_\-\-E\-V\-E\-N\-T\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{C\-H\-E\-C\-K\-\_\-\-E\-V\-E\-N\-T\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-E\-C\-K\-\_\-\-E\-V\-E\-N\-T\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R(
+\begin{DoxyParamCaption}
+\item[{}]{index\-Event}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a20fe5caedb545ecdb73b095278904e58}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                             \(\backslash\)
+  if (indexEvent >= ECMC\_MAX\_EVENT\_OBJECTS || indexEvent < 0) \{               \(\backslash\)
+    LOGERR(\textcolor{stringliteral}{"ERROR: Event index out of range.\(\backslash\)n"});                             \(\backslash\)
+    return ERROR\_MAIN\_EVENT\_INDEX\_OUT\_OF\_RANGE;                               \(\backslash\)
+  \}                                                                           \(\backslash\)
+  if (events[indexEvent] == NULL) \{                                           \(\backslash\)
+    LOGERR(\textcolor{stringliteral}{"ERROR: Event object NULL.\(\backslash\)n"});                                    \(\backslash\)
+    return ERROR\_MAIN\_EVENT\_NULL;                                             \(\backslash\)
+  \}                                                                           \(\backslash\)
+\}                                                                             \(\backslash\)
+\end{DoxyCode}
+\hypertarget{ecmcMisc_8h_ad796706e1b96393f1e4baddcd64e7c95}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!C\-H\-E\-C\-K\-\_\-\-R\-E\-C\-O\-R\-D\-E\-R\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R@{C\-H\-E\-C\-K\-\_\-\-R\-E\-C\-O\-R\-D\-E\-R\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}}
+\index{C\-H\-E\-C\-K\-\_\-\-R\-E\-C\-O\-R\-D\-E\-R\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R@{C\-H\-E\-C\-K\-\_\-\-R\-E\-C\-O\-R\-D\-E\-R\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{C\-H\-E\-C\-K\-\_\-\-R\-E\-C\-O\-R\-D\-E\-R\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-E\-C\-K\-\_\-\-R\-E\-C\-O\-R\-D\-E\-R\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R(
+\begin{DoxyParamCaption}
+\item[{}]{index\-Recorder}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_ad796706e1b96393f1e4baddcd64e7c95}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                             \(\backslash\)
+  if (indexRecorder >= ECMC\_MAX\_DATA\_RECORDERS\_OBJECTS || indexRecorder < 0) \{\(\backslash\)
+    LOGERR(\textcolor{stringliteral}{"ERROR: Data recorder index out of range.\(\backslash\)n"});                     \(\backslash\)
+    return ERROR\_MAIN\_DATA\_RECORDER\_INDEX\_OUT\_OF\_RANGE;                       \(\backslash\)
+  \}                                                                           \(\backslash\)
+  if (dataRecorders[indexRecorder] == NULL) \{                                 \(\backslash\)
+    LOGERR(\textcolor{stringliteral}{"ERROR: Data recorder object NULL.\(\backslash\)n"});                            \(\backslash\)
+    return ERROR\_MAIN\_DATA\_RECORDER\_NULL;                                     \(\backslash\)
+  \}                                                                           \(\backslash\)
+\}                                                                             \(\backslash\)
+\end{DoxyCode}
+\hypertarget{ecmcMisc_8h_ae52fa987839469869a7e83f72d55a1af}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!C\-H\-E\-C\-K\-\_\-\-S\-T\-O\-R\-A\-G\-E\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R@{C\-H\-E\-C\-K\-\_\-\-S\-T\-O\-R\-A\-G\-E\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}}
+\index{C\-H\-E\-C\-K\-\_\-\-S\-T\-O\-R\-A\-G\-E\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R@{C\-H\-E\-C\-K\-\_\-\-S\-T\-O\-R\-A\-G\-E\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{C\-H\-E\-C\-K\-\_\-\-S\-T\-O\-R\-A\-G\-E\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-E\-C\-K\-\_\-\-S\-T\-O\-R\-A\-G\-E\-\_\-\-R\-E\-T\-U\-R\-N\-\_\-\-I\-F\-\_\-\-E\-R\-R\-O\-R(
+\begin{DoxyParamCaption}
+\item[{}]{index\-Storage}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_ae52fa987839469869a7e83f72d55a1af}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                                                                             \(\backslash\)
+  if (indexStorage >= ECMC\_MAX\_DATA\_STORAGE\_OBJECTS || indexStorage < 0) \{    \(\backslash\)
+    LOGERR(\textcolor{stringliteral}{"ERROR: Data storage index out of range.\(\backslash\)n"});                      \(\backslash\)
+    return ERROR\_MAIN\_DATA\_STORAGE\_INDEX\_OUT\_OF\_RANGE;                        \(\backslash\)
+  \}                                                                           \(\backslash\)
+  if (dataStorages[indexStorage] == NULL) \{                                   \(\backslash\)
+    LOGERR(\textcolor{stringliteral}{"ERROR: Data storage object NULL.\(\backslash\)n"});                             \(\backslash\)
+    return ERROR\_MAIN\_DATA\_STORAGE\_NULL;                                      \(\backslash\)
+  \}                                                                           \(\backslash\)
+\}                                                                             \(\backslash\)
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\hypertarget{ecmcMisc_8h_ab28fbc71aadd1937ec629e4f781b5361}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!add\-Command\-List\-Command@{add\-Command\-List\-Command}}
+\index{add\-Command\-List\-Command@{add\-Command\-List\-Command}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{add\-Command\-List\-Command}]{\setlength{\rightskip}{0pt plus 5cm}int add\-Command\-List\-Command (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Command\-List, }
+\item[{char $\ast$}]{expr}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_ab28fbc71aadd1937ec629e4f781b5361}
+
+
+Add command to command list.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Command\-List} & Index of command list object to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em expr} & Command string.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Add \char`\"{}\-Main.\-M1.\-b\-Execute=1\char`\"{} to command list 1.\par
+ \char`\"{}\-Cfg.\-Add\-Command\-To\-Command\-List(1)=\-Main.\-M1.\-b\-Execute=1\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a7e4443afcd740f81023d8a4f58526a04}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!append\-Storage\-Buffer@{append\-Storage\-Buffer}}
+\index{append\-Storage\-Buffer@{append\-Storage\-Buffer}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{append\-Storage\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}int append\-Storage\-Buffer (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Storage, }
+\item[{double $\ast$}]{data, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a7e4443afcd740f81023d8a4f58526a04}
+
+
+Appends data to the end of storage buffer.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Storage} & Index of data storage object to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em data} & Pointer to data.\par
+\\
+\hline
+\mbox{\tt in}  & {\em size} & Number of data elements to write.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Append data to data storage object 3 .\par
+ \char`\"{}\-Append\-Data\-Storage(3)=0,0,0,0,0,0.....\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a7b6f4d6a0df897ade7814f0e059d46bc}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!arm\-Event@{arm\-Event}}
+\index{arm\-Event@{arm\-Event}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{arm\-Event}]{\setlength{\rightskip}{0pt plus 5cm}int arm\-Event (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Event}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a7b6f4d6a0df897ade7814f0e059d46bc}
+
+
+Arm event.\par
+. 
+
+Manually execute arm sequence, see command \hyperlink{ecmcMisc_8h_a7b852a27434c35aca0e150197200c75e}{set\-Event\-Enable\-Arm\-Sequence()}.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Event} & Index of event to address.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Run arm sequence for event 7.\par
+ \char`\"{}\-Cfg.\-Arm\-Event(7)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a5c8069db8b96c9ae6fddb342febf79e1}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!clear\-Storage@{clear\-Storage}}
+\index{clear\-Storage@{clear\-Storage}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{clear\-Storage}]{\setlength{\rightskip}{0pt plus 5cm}int clear\-Storage (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Storage}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a5c8069db8b96c9ae6fddb342febf79e1}
+
+
+Clear data storage buffer. 
+
+Erases all data within a data storage object.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & Index of data storage object to clear.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Clear data storage object with index 4.\par
+ \char`\"{}\-Cfg.\-Clear\-Storage(4)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a18622ac46755b384536ac856ace879df}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!create\-Command\-List@{create\-Command\-List}}
+\index{create\-Command\-List@{create\-Command\-List}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{create\-Command\-List}]{\setlength{\rightskip}{0pt plus 5cm}int create\-Command\-List (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Command\-List}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a18622ac46755b384536ac856ace879df}
+
+
+Create a command list object. 
+
+The command list object consists of a list of commands that can be executed. Currently any command can be added to the command list. The execution of the command list can be triggered by an event or by the command \hyperlink{ecmcMisc_8h_a467dd3a9b75989dd4a1e07239fda2e27}{trigger\-Command\-List()}.\par
+ \begin{DoxyNote}{Note}
+If the command list is triggered by a hardware event. The command list will be executed from the realtime thread. In this case special consideration needs to be taken so that the jitter of realtime thread is not worsen. Normal motion commands are normally no issue to use but commands that creates new axis or takes long time to return should be avoided.\par
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & Index of command list object to create.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Create a command list object at index 1.\par
+\char`\"{}\-Cfg.\-Create\-Command\-List(1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a5f66c7d4fdf0db73e6cfa81d48368f89}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!create\-Data\-Storage@{create\-Data\-Storage}}
+\index{create\-Data\-Storage@{create\-Data\-Storage}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{create\-Data\-Storage}]{\setlength{\rightskip}{0pt plus 5cm}int create\-Data\-Storage (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{int}]{elements, }
+\item[{int}]{buffer\-Type}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a5f66c7d4fdf0db73e6cfa81d48368f89}
+
+
+Create a data storage object. 
+
+The data storage object is a data buffer.
+
+Currently only the recorder object utilizes the data storage object. However, it's foreseen that it will also be useful to store trajectory array data in\par
+.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]A method to copy the data to an E\-P\-I\-C\-S waveform needs to be implemented.\par
+\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & Index of data storage object to create.\par
+\\
+\hline
+\mbox{\tt in}  & {\em elements} & Size of data buffer.\par
+\\
+\hline
+\mbox{\tt in}  & {\em buffer\-Type} & Data buffer type.\par
+ buffer\-Type = 0\-: Normal buffer (fill from beginning stop when full).\par
+ buffer\-Type = 1\-: Ring buffer (fill from beginning start over when full).\par
+ buffer\-Type = 2\-: F\-I\-F\-O buffer (fill from end. old values shifted out).\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Create a L\-I\-F\-O data storage object with 1000 elements at index 1.\par
+ \char`\"{}\-Cfg.\-Create\-Storage(1,1000,0)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_aa3202cd4faa9504e97cf19ec08cb90dc}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!create\-Event@{create\-Event}}
+\index{create\-Event@{create\-Event}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{create\-Event}]{\setlength{\rightskip}{0pt plus 5cm}int create\-Event (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_aa3202cd4faa9504e97cf19ec08cb90dc}
+
+
+Create an event object. 
+
+An event can be trigger actions based on hardware related events (changes of values on the Ether\-C\-A\-T bus (entries)).\par
+ The events needs to be configured with atleast a subset of the below commands\-:\par
+
+\begin{DoxyEnumerate}
+\item \hyperlink{ecmcMisc_8h_ace18ea8b9ce1804ae7cf8169e021caec}{link\-Ec\-Entry\-To\-Event()}
+\item \hyperlink{ecmcMisc_8h_a93bcf19fb8ca068d47a0f29832559472}{set\-Event\-Type()}
+\item \hyperlink{ecmcMisc_8h_a9cfc89f0c39b12ba9d39be61290ac624}{set\-Event\-Sample\-Time()}
+\item \hyperlink{ecmcMisc_8h_a606fe1d11ba1066db1e0abfe53cb6cdd}{set\-Event\-Trigger\-Edge()}
+\item \hyperlink{ecmcMisc_8h_a7b852a27434c35aca0e150197200c75e}{set\-Event\-Enable\-Arm\-Sequence()}
+\end{DoxyEnumerate}
+
+Currently two kinds of objects can be linked to an event\-:\par
+
+\begin{DoxyEnumerate}
+\item Data recorder object (records data at a triggered event), see command \hyperlink{ecmcMisc_8h_a32ee75bde2f4997058adf1e4e6ba2465}{create\-Recorder()}.\par
+
+\item Command list object (executes a series of commands at a triggered event), see command \hyperlink{ecmcMisc_8h_a18622ac46755b384536ac856ace879df}{create\-Command\-List()}.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & Index of event to create.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Create a event object at index 1.\par
+ \char`\"{}\-Cfg.\-Create\-Event(1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+
+\end{DoxyEnumerate}\hypertarget{ecmcMisc_8h_a32ee75bde2f4997058adf1e4e6ba2465}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!create\-Recorder@{create\-Recorder}}
+\index{create\-Recorder@{create\-Recorder}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{create\-Recorder}]{\setlength{\rightskip}{0pt plus 5cm}int create\-Recorder (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Recorder}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a32ee75bde2f4997058adf1e4e6ba2465}
+
+
+Create recorder object. 
+
+The recorder object stores data, from an Ether\-C\-A\-T entry, in a data storage object. The recording of a data point can be triggered by an event or by the command \hyperlink{ecmcMisc_8h_ab826ec827ce0c393896ece563eea4b45}{trigger\-Recorder()}.\par
+ An Ether\-C\-A\-T data entry needs to be linked to the object with the command \hyperlink{ecmcMisc_8h_a99c30875ea25f275be26990f47b8b2a3}{link\-Ec\-Entry\-To\-Recorder()}.\par
+The data recorder object needs a data storage object to store data in. The data storage object needs to be linked to the recorder object with the command \hyperlink{ecmcMisc_8h_a446135d6477072f43c7e1b88bcc93e91}{link\-Storage\-To\-Recorder()}.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & Index of recorder object to create.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Create a recorder object at index 1.\par
+\char`\"{}\-Cfg.\-Create\-Recorder(1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a593eccfbc8ebbd0158dbd07f6df07b94}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!get\-Event\-Enabled@{get\-Event\-Enabled}}
+\index{get\-Event\-Enabled@{get\-Event\-Enabled}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{get\-Event\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}int get\-Event\-Enabled (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Event, }
+\item[{int $\ast$}]{enabled}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a593eccfbc8ebbd0158dbd07f6df07b94}
+
+
+Get event enabled.\par
+. 
+
+Event evaluation and triggering is only active when the enable bit is high.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Event} & Index of event to address.\par
+\\
+\hline
+\mbox{\tt out}  & {\em enabled} & Enabled.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Get Enabled for event 2 .\par
+ \char`\"{}\-Get\-Event\-Enabled(2)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a8d6325270bff97b12e6c8b00b1f9bc01}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!get\-Recorder\-Enabled@{get\-Recorder\-Enabled}}
+\index{get\-Recorder\-Enabled@{get\-Recorder\-Enabled}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{get\-Recorder\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}int get\-Recorder\-Enabled (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Recorder, }
+\item[{int $\ast$}]{enabled}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a8d6325270bff97b12e6c8b00b1f9bc01}
+
+
+Get recorder enabled.\par
+. 
+
+Recording of data is only active when the enable bit is high.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Recorder} & Index of recorder to address.\par
+\\
+\hline
+\mbox{\tt out}  & {\em enabled} & Enabled.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Get recorder object 4 enabled.\par
+ \char`\"{}\-Get\-Recorder\-Enabled(4)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a11b716bda7d92a2d2397e666e671bce3}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!get\-Storage\-Data\-Index@{get\-Storage\-Data\-Index}}
+\index{get\-Storage\-Data\-Index@{get\-Storage\-Data\-Index}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{get\-Storage\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int get\-Storage\-Data\-Index (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Storage, }
+\item[{int $\ast$}]{index}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a11b716bda7d92a2d2397e666e671bce3}
+
+
+Get current index of data in storage buffer.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & Index of data storage object to clear.\par
+\\
+\hline
+\mbox{\tt out}  & {\em index} & Current data element index.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Get current data element index for data storage object with index 4.\par
+ \char`\"{}\-Get\-Storage\-Data\-Index(4)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a7b7830ff6baa10fdf5b430ea63923cb1}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!link\-Axis\-Data\-To\-Recorder@{link\-Axis\-Data\-To\-Recorder}}
+\index{link\-Axis\-Data\-To\-Recorder@{link\-Axis\-Data\-To\-Recorder}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{link\-Axis\-Data\-To\-Recorder}]{\setlength{\rightskip}{0pt plus 5cm}int link\-Axis\-Data\-To\-Recorder (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Recorder, }
+\item[{int}]{axis\-Index, }
+\item[{int}]{data\-To\-Store}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a7b7830ff6baa10fdf5b430ea63923cb1}
+
+
+Links an axis data source to a recorder object. \par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Recorder} & Index of recorder object to link to.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em axis\-Index} & Index of axis to get data from.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em data\-To\-Store} & data to record from axis object.\par
+ data\-To\-Store = 0 \-: No data choosen.\par
+ data\-To\-Store = 1 \-: Position Setpoint (from trajectory generator).\par
+ data\-To\-Store = 2 \-: Position Actual (scaled).\par
+ data\-To\-Store = 3 \-: Position Error.\par
+ data\-To\-Store = 4 \-: Position Target.\par
+ data\-To\-Store = 5 \-: Controller Error.\par
+ data\-To\-Store = 6 \-: Controller Output.\par
+ data\-To\-Store = 7 \-: Velocity Setpoint.\par
+ data\-To\-Store = 8 \-: Velocity Actual.\par
+ data\-To\-Store = 9 \-: Velocity Setpoint Raw.\par
+ data\-To\-Store = 10\-: Velocity Setpoint Feed Forward Raw.\par
+ data\-To\-Store = 11\-: Error Code.\par
+ data\-To\-Store = 12\-: Enable (command).\par
+ data\-To\-Store = 13\-: Enabled (status).\par
+ data\-To\-Store = 14\-: Execute (command).\par
+ data\-To\-Store = 15\-: Busy (status).\par
+ data\-To\-Store = 16\-: Sequence state.\par
+ data\-To\-Store = 17\-: At Target (status).\par
+ data\-To\-Store = 18\-: Interlock type.\par
+ data\-To\-Store = 19\-: Limit Switch forward.\par
+ data\-To\-Store = 20\-: Limit Switch backward.\par
+ data\-To\-Store = 21\-: Home switch.\par
+ data\-To\-Store = 22\-: Command.\par
+ data\-To\-Store = 23\-: Command Data (cmd\-Data).\par
+ data\-To\-Store = 24\-: Trajectory setpoint source.\par
+ 0 = Internal Source.\par
+ $>$0 = External Source.\par
+ data\-To\-Store = 25\-: Encoder setpoint source.\par
+ 0 = Internal Source.\par
+ $>$0 = External Source.\par
+ data\-To\-Store = 26\-: Axis Id.\par
+ data\-To\-Store = 27\-: Cycle counter.\par
+ data\-To\-Store = 28\-: Position Raw.\par
+ data\-To\-Store = 29\-: Encoder homed.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example 1\-: Link Actual position of axis 4 to recorder 1\-:.\par
+ in slave 1 as data for recorder object 7.\par
+ \char`\"{}\-Cfg.\-Link\-Axis\-Data\-To\-Recorder(1,4,2)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a5440844279a74bca47cbc3d4a68412f3}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!link\-Command\-List\-To\-Event@{link\-Command\-List\-To\-Event}}
+\index{link\-Command\-List\-To\-Event@{link\-Command\-List\-To\-Event}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{link\-Command\-List\-To\-Event}]{\setlength{\rightskip}{0pt plus 5cm}int link\-Command\-List\-To\-Event (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Command\-List, }
+\item[{int}]{index\-Event, }
+\item[{int}]{consumer\-Index}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a5440844279a74bca47cbc3d4a68412f3}
+
+
+Link command list object to event object.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Command\-List} & Index of command list object to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em index\-Event} & Index of event object to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em consumer\-Index} & Event consumer index (one event can have a list with consumers).\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Link coommand list object 3 with event object 4, event consumer index 0.\par
+ \char`\"{}\-Cfg.\-Link\-Command\-List\-To\-Event(3,4,0)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_ace18ea8b9ce1804ae7cf8169e021caec}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!link\-Ec\-Entry\-To\-Event@{link\-Ec\-Entry\-To\-Event}}
+\index{link\-Ec\-Entry\-To\-Event@{link\-Ec\-Entry\-To\-Event}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{link\-Ec\-Entry\-To\-Event}]{\setlength{\rightskip}{0pt plus 5cm}int link\-Ec\-Entry\-To\-Event (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Event, }
+\item[{int}]{event\-Entry\-Index, }
+\item[{int}]{slave\-Bus\-Position, }
+\item[{char $\ast$}]{entry\-I\-D\-String, }
+\item[{int}]{bit\-Index}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_ace18ea8b9ce1804ae7cf8169e021caec}
+
+
+Links an Ether\-C\-A\-T entry to an event object. \par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em event\-Index} & Index of event object to link to.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em event\-Entry\-Index} & Index of event objects entry list.\par
+ event\-Entry\-Index = 0\-: Event trigger data input.\par
+ event\-Entry\-Index = 1\-: Arm output (to re-\/arm latching hardware).\par
+ \\
+\hline
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Bus\-Position = -\/1\-: Used to address the simulation slave. Only two entries are configured, \char`\"{}\-Z\-E\-R\-O\char`\"{} with default value 0 and \char`\"{}\-O\-N\-E\char`\"{} with default value 1.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of normal Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em entry\-Id\-String} & String for addressing purpose (see command \char`\"{}\-Cfg.\-Ec\-Add\-Entry\-Complete() for more information\char`\"{}).\par
+ \\
+\hline
+\mbox{\tt in}  & {\em entry\-Bit\-Index} & Bit index of Ether\-C\-A\-T entry to use.\par
+ entry\-Bit\-Index = -\/1\-: All bits of the entry will be used.\par
+ entry\-Bit\-Index = 0..64\-: Only the selected bit will be used.\par
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example 1\-: Link bit 0 of an Ether\-C\-A\-T entry configured as \char`\"{}\-I\-N\-P\-U\-T\-\_\-0\char`\"{} in slave 1 as \char`\"{}event trigger data\char`\"{} for event object 7.\par
+ \char`\"{}\-Cfg.\-Link\-Ec\-Entry\-To\-Event(7,0,1,\char`\"{}I\-N\-P\-U\-T\-\_\-0\char`\"{},0)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+ 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]This function have not consistent parameter order with the other link functions as \char`\"{}link\-Ec\-Entry\-To\-Axis\-Mon\char`\"{}.\par
+ \end{DoxyRefDesc}
+\hypertarget{ecmcMisc_8h_a99c30875ea25f275be26990f47b8b2a3}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!link\-Ec\-Entry\-To\-Recorder@{link\-Ec\-Entry\-To\-Recorder}}
+\index{link\-Ec\-Entry\-To\-Recorder@{link\-Ec\-Entry\-To\-Recorder}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{link\-Ec\-Entry\-To\-Recorder}]{\setlength{\rightskip}{0pt plus 5cm}int link\-Ec\-Entry\-To\-Recorder (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Recorder, }
+\item[{int}]{recorder\-Entry\-Index, }
+\item[{int}]{slave\-Bus\-Position, }
+\item[{char $\ast$}]{entry\-I\-D\-String, }
+\item[{int}]{bit\-Index}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a99c30875ea25f275be26990f47b8b2a3}
+
+
+Links an Ether\-C\-A\-T entry to a recorder object. \par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Recorder} & Index of recorder object to link to.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em recorder\-Entry\-Index} & Index of recorder objects entry list.\par
+ recorder\-Entry\-Index = 0\-: data input.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em slave\-Bus\-Position} & Position of the Ether\-C\-A\-T slave on the bus.\par
+ slave\-Bus\-Position = -\/1\-: Used to address the simulation slave. Only two entries are configured, \char`\"{}\-Z\-E\-R\-O\char`\"{} with default value 0 and \char`\"{}\-O\-N\-E\char`\"{} with default value 1.\par
+ slave\-Bus\-Position = 0..65535\-: Addressing of normal Ether\-C\-A\-T slaves.\par
+ \\
+\hline
+\mbox{\tt in}  & {\em entry\-Id\-String} & String for addressing purpose (see command \char`\"{}\-Cfg.\-Ec\-Add\-Entry\-Complete() for more information\char`\"{}).\par
+ \\
+\hline
+\mbox{\tt in}  & {\em entry\-Bit\-Index} & Bit index of Ether\-C\-A\-T entry to use.\par
+ entry\-Bit\-Index = -\/1\-: All bits of the entry will be used.\par
+ entry\-Bit\-Index = 0..64\-: Only the selected bit will be used.\par
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example 1\-: Link bit 0 of an Ether\-C\-A\-T entry configured as \char`\"{}\-I\-N\-P\-U\-T\-\_\-0\char`\"{} in slave 1 as data for recorder object 7.\par
+ \char`\"{}\-Cfg.\-Link\-Ec\-Entry\-To\-Recorder(7,0,1,\char`\"{}I\-N\-P\-U\-T\-\_\-0\char`\"{},0)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+ 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]This function have not consistent parameter order with the other link functions as \char`\"{}link\-Ec\-Entry\-To\-Axis\-Mon\char`\"{}.\par
+ \end{DoxyRefDesc}
+\hypertarget{ecmcMisc_8h_a3d484b4cbaad5b19f974196ca779b93e}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!link\-Recorder\-To\-Event@{link\-Recorder\-To\-Event}}
+\index{link\-Recorder\-To\-Event@{link\-Recorder\-To\-Event}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{link\-Recorder\-To\-Event}]{\setlength{\rightskip}{0pt plus 5cm}int link\-Recorder\-To\-Event (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Recorder, }
+\item[{int}]{index\-Event, }
+\item[{int}]{consumer\-Index}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a3d484b4cbaad5b19f974196ca779b93e}
+
+
+Link recorder object to event object.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Recorder} & Index of recorder object to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em index\-Event} & Index of event object to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em consumer\-Index} & Event consumer index (one event can have a list with consumers).\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Link recorder object 3 with event object 4, event consumer index 0.\par
+ \char`\"{}\-Cfg.\-Link\-Recorder\-To\-Event(3,4,0)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a446135d6477072f43c7e1b88bcc93e91}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!link\-Storage\-To\-Recorder@{link\-Storage\-To\-Recorder}}
+\index{link\-Storage\-To\-Recorder@{link\-Storage\-To\-Recorder}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{link\-Storage\-To\-Recorder}]{\setlength{\rightskip}{0pt plus 5cm}int link\-Storage\-To\-Recorder (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Storage, }
+\item[{int}]{index\-Recorder}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a446135d6477072f43c7e1b88bcc93e91}
+
+
+Link storage object to recorder object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Storage} & Index of storage object.\par
+\\
+\hline
+\mbox{\tt in}  & {\em index\-Recorder} & Index of recorder object.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Link storage object 5 to recorder object 3.\par
+\char`\"{}\-Cfg.\-Link\-Storage\-To\-Recorder(5,3)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_aa831e0863c4b808d0c57d7916e679bc8}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!print\-Storage\-Buffer@{print\-Storage\-Buffer}}
+\index{print\-Storage\-Buffer@{print\-Storage\-Buffer}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{print\-Storage\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}int print\-Storage\-Buffer (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Storage}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_aa831e0863c4b808d0c57d7916e679bc8}
+
+
+Print contents of buffer.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Stroage} & Index of data storage object to address.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Print contents of data storage object 3 .\par
+ \char`\"{}\-Cfg.\-Print\-Data\-Storage(3)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a0a19a26500d1de3753a603fea1443942}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!read\-Storage\-Buffer@{read\-Storage\-Buffer}}
+\index{read\-Storage\-Buffer@{read\-Storage\-Buffer}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{read\-Storage\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}int read\-Storage\-Buffer (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Storage, }
+\item[{double $\ast$$\ast$}]{data, }
+\item[{int $\ast$}]{size}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a0a19a26500d1de3753a603fea1443942}
+
+
+Reads contents of storage buffer.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Storage} & Index of data storage object to address.\par
+\\
+\hline
+\mbox{\tt out}  & {\em data} & Pointer to data.\par
+\\
+\hline
+\mbox{\tt out}  & {\em size} & Number of data elements.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Read contents of data storage object 3 .\par
+ \char`\"{}\-Read\-Data\-Storage(3)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a20e4f60bb1f7fe07bad6c2236a1413fd}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!set\-Command\-List\-Enable@{set\-Command\-List\-Enable}}
+\index{set\-Command\-List\-Enable@{set\-Command\-List\-Enable}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{set\-Command\-List\-Enable}]{\setlength{\rightskip}{0pt plus 5cm}int set\-Command\-List\-Enable (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Command\-List, }
+\item[{int}]{enable}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a20e4f60bb1f7fe07bad6c2236a1413fd}
+
+
+Enable command list.\par
+. 
+
+Command list will only be executed when the enable bit is high.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Command\-List} & Index of command list to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em enable} & Enable.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: \char`\"{}\-Enable\char`\"{} command list execution for object 4.\par
+ \char`\"{}\-Cfg.\-Set\-Command\-List\-Enable(4,1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a78e3d0322959ac04995d168710361aff}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!set\-Command\-List\-Enable\-Printouts@{set\-Command\-List\-Enable\-Printouts}}
+\index{set\-Command\-List\-Enable\-Printouts@{set\-Command\-List\-Enable\-Printouts}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{set\-Command\-List\-Enable\-Printouts}]{\setlength{\rightskip}{0pt plus 5cm}int set\-Command\-List\-Enable\-Printouts (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Command\-List, }
+\item[{int}]{enable}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a78e3d0322959ac04995d168710361aff}
+
+
+Enable diagnostic printouts from command list object.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Command\-List} & Index of command list object to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em enable} & Enable diagnostic printouts.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Enable diagnostic printouts for command list object 3 .\par
+ \char`\"{}\-Cfg.\-Set\-Command\-List\-Enable\-Printouts(3,1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_af0e2d242a0720676335ed7a3643a1eca}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!set\-Data\-Storage\-Current\-Data\-Index@{set\-Data\-Storage\-Current\-Data\-Index}}
+\index{set\-Data\-Storage\-Current\-Data\-Index@{set\-Data\-Storage\-Current\-Data\-Index}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{set\-Data\-Storage\-Current\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int set\-Data\-Storage\-Current\-Data\-Index (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Storage, }
+\item[{int}]{position}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_af0e2d242a0720676335ed7a3643a1eca}
+
+
+Set current data index of storage buffer.\par
+. 
+
+This function can be used to set teh current index of a data storage buffer. A subsequent append of data will start at this position index in the buffer array.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Storage} & Index of data storage object to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em position} & Position index of data.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Set current index of data storage 0 to 10.\par
+ \char`\"{}\-Cfg.\-Set\-Data\-Storage\-Current\-Data\-Index(0,10)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a92893c854a8015ba26f78accd6a229ad}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!set\-Event\-Enable@{set\-Event\-Enable}}
+\index{set\-Event\-Enable@{set\-Event\-Enable}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{set\-Event\-Enable}]{\setlength{\rightskip}{0pt plus 5cm}int set\-Event\-Enable (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Event, }
+\item[{int}]{enable}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a92893c854a8015ba26f78accd6a229ad}
+
+
+Enable event.\par
+. 
+
+Event evaluation and triggering is only active when the enable bit is high.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Event} & Index of event to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em enable} & Enable.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Start evaluation of events for event object 4 .\par
+ \char`\"{}\-Cfg.\-Set\-Event\-Enable(4,1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a7b852a27434c35aca0e150197200c75e}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!set\-Event\-Enable\-Arm\-Sequence@{set\-Event\-Enable\-Arm\-Sequence}}
+\index{set\-Event\-Enable\-Arm\-Sequence@{set\-Event\-Enable\-Arm\-Sequence}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{set\-Event\-Enable\-Arm\-Sequence}]{\setlength{\rightskip}{0pt plus 5cm}int set\-Event\-Enable\-Arm\-Sequence (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Event, }
+\item[{int}]{enable}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a7b852a27434c35aca0e150197200c75e}
+
+
+Enable arm sequence.\par
+. 
+
+Some hardware require that the input card is re-\/armed after each value have been collected (typically latched I/\-O). The arm sequence will, if enabled, write a 0 followed by a 1 the following cycle to the arm output entry, see command \hyperlink{ecmcMisc_8h_ace18ea8b9ce1804ae7cf8169e021caec}{link\-Ec\-Entry\-To\-Event()}.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Event} & Index of event to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em enable} & Enable arm sequence.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Enable arm sequence for event 3 .\par
+ \char`\"{}\-Cfg.\-Set\-Event\-Enable\-Arm\-Sequence(3,1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_ae384be74cfb4d643d96bcc0d79d000a7}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!set\-Event\-Enable\-Printouts@{set\-Event\-Enable\-Printouts}}
+\index{set\-Event\-Enable\-Printouts@{set\-Event\-Enable\-Printouts}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{set\-Event\-Enable\-Printouts}]{\setlength{\rightskip}{0pt plus 5cm}int set\-Event\-Enable\-Printouts (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Event, }
+\item[{int}]{enable}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_ae384be74cfb4d643d96bcc0d79d000a7}
+
+
+Enable diagnostic printouts from event object.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Event} & Index of event to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em enable} & Enable diagnostic printouts.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Enable diagnostic printouts for event 3 .\par
+ \char`\"{}\-Cfg.\-Set\-Event\-Enable\-Printouts(3,1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a9cfc89f0c39b12ba9d39be61290ac624}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!set\-Event\-Sample\-Time@{set\-Event\-Sample\-Time}}
+\index{set\-Event\-Sample\-Time@{set\-Event\-Sample\-Time}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{set\-Event\-Sample\-Time}]{\setlength{\rightskip}{0pt plus 5cm}int set\-Event\-Sample\-Time (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Event, }
+\item[{int}]{sample\-Time}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a9cfc89f0c39b12ba9d39be61290ac624}
+
+
+Set event sampling time (cycle counts).\par
+. 
+
+Sets the sample rate at which events will be triggered.
+
+Note\-: This parameter is only valid for sample rate triggered event type (type = 0), see \hyperlink{ecmcMisc_8h_a93bcf19fb8ca068d47a0f29832559472}{set\-Event\-Type()}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Event} & Index of event to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em type} & Type of event.\par
+ type = 0\-: Sample rate triggered (see \hyperlink{ecmcMisc_8h_a9cfc89f0c39b12ba9d39be61290ac624}{set\-Event\-Sample\-Time()}).\par
+ type = 1\-: Trigger on data source edge (see \hyperlink{ecmcMisc_8h_a606fe1d11ba1066db1e0abfe53cb6cdd}{set\-Event\-Trigger\-Edge()}).\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Set event sample time (cycle counts) to 10 for event 5.\par
+ \char`\"{}\-Cfg.\-Set\-Event\-Sample\-Time(5,10)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a606fe1d11ba1066db1e0abfe53cb6cdd}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!set\-Event\-Trigger\-Edge@{set\-Event\-Trigger\-Edge}}
+\index{set\-Event\-Trigger\-Edge@{set\-Event\-Trigger\-Edge}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{set\-Event\-Trigger\-Edge}]{\setlength{\rightskip}{0pt plus 5cm}int set\-Event\-Trigger\-Edge (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Event, }
+\item[{int}]{trigger\-Edge}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a606fe1d11ba1066db1e0abfe53cb6cdd}
+
+
+Set event trigger edge.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Event} & Index of event to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em trigger\-Edge} & Type of event.\par
+ trigger\-Edge = 0\-: Trigger event on positive edge.\par
+ trigger\-Edge = 1\-: Trigger event on negative edge.\par
+ trigger\-Edge = 2\-: Trigger event on on change.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Set event trigger edge to positive.\par
+ \char`\"{}\-Cfg.\-Set\-Event\-Trigger\-Edge(1,0)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a93bcf19fb8ca068d47a0f29832559472}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!set\-Event\-Type@{set\-Event\-Type}}
+\index{set\-Event\-Type@{set\-Event\-Type}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{set\-Event\-Type}]{\setlength{\rightskip}{0pt plus 5cm}int set\-Event\-Type (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Event, }
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a93bcf19fb8ca068d47a0f29832559472}
+
+
+Set event type.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Event} & Index of event to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em type} & Type of event.\par
+ type = 0\-: Sample rate triggered (see \hyperlink{ecmcMisc_8h_a9cfc89f0c39b12ba9d39be61290ac624}{set\-Event\-Sample\-Time()}).\par
+ type = 1\-: Trigger on data source edge (see \hyperlink{ecmcMisc_8h_a606fe1d11ba1066db1e0abfe53cb6cdd}{set\-Event\-Trigger\-Edge()}).\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Set event type to edge triggered for event 5.\par
+ \char`\"{}\-Cfg.\-Set\-Event\-Type(5,1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a65b26e568f6d53dcf8982884c5975b5b}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!set\-Recorder\-Enable@{set\-Recorder\-Enable}}
+\index{set\-Recorder\-Enable@{set\-Recorder\-Enable}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{set\-Recorder\-Enable}]{\setlength{\rightskip}{0pt plus 5cm}int set\-Recorder\-Enable (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Recorder, }
+\item[{int}]{enable}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a65b26e568f6d53dcf8982884c5975b5b}
+
+
+Enable recorder.\par
+. 
+
+Recording of data is only active when the enable bit is high.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Recorder} & Index of recorder to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em enable} & Enable.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Start data recording of recorder object 4.\par
+ \char`\"{}\-Cfg.\-Set\-Recorder\-Enable(4,1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a00735d91b5d494d36c6778f54fa7f3f3}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!set\-Recorder\-Enable\-Printouts@{set\-Recorder\-Enable\-Printouts}}
+\index{set\-Recorder\-Enable\-Printouts@{set\-Recorder\-Enable\-Printouts}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{set\-Recorder\-Enable\-Printouts}]{\setlength{\rightskip}{0pt plus 5cm}int set\-Recorder\-Enable\-Printouts (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Recorder, }
+\item[{int}]{enable}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a00735d91b5d494d36c6778f54fa7f3f3}
+
+
+Enable diagnostic printouts from recorder object.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Recorder} & Index of recorder object to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em enable} & Enable diagnostic printouts.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Enable diagnostic printouts for recorder object 3 .\par
+ \char`\"{}\-Cfg.\-Set\-Recorder\-Enable\-Printouts(3,1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_aca60e5e0b2eabc1d557b14c5347c9429}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!set\-Storage\-Enable\-Printouts@{set\-Storage\-Enable\-Printouts}}
+\index{set\-Storage\-Enable\-Printouts@{set\-Storage\-Enable\-Printouts}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{set\-Storage\-Enable\-Printouts}]{\setlength{\rightskip}{0pt plus 5cm}int set\-Storage\-Enable\-Printouts (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Storage, }
+\item[{int}]{enable}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_aca60e5e0b2eabc1d557b14c5347c9429}
+
+
+Enable diagnostic printouts from data storage object.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Stroage} & Index of data storage object to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em enable} & Enable diagnostic printouts.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Enable diagnostic printouts for data storage object 3 .\par
+ \char`\"{}\-Cfg.\-Set\-Storage\-Enable\-Printouts(3,1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a467dd3a9b75989dd4a1e07239fda2e27}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!trigger\-Command\-List@{trigger\-Command\-List}}
+\index{trigger\-Command\-List@{trigger\-Command\-List}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{trigger\-Command\-List}]{\setlength{\rightskip}{0pt plus 5cm}int trigger\-Command\-List (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Command\-List}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a467dd3a9b75989dd4a1e07239fda2e27}
+
+
+Force trigger command list.\par
+. 
+
+All commands in the command list object will be executed.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Command\-List} & Index of command list to address.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Force trigger command list 1.\par
+ \char`\"{}\-Cfg.\-Trigger\-Command\-List(1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a4fcd7b664a0d891ca75871e536cd9eb6}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!trigger\-Event@{trigger\-Event}}
+\index{trigger\-Event@{trigger\-Event}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{trigger\-Event}]{\setlength{\rightskip}{0pt plus 5cm}int trigger\-Event (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Event}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a4fcd7b664a0d891ca75871e536cd9eb6}
+
+
+Force trigger event.\par
+. 
+
+Any subscriber functions to an event will be executed.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Event} & Index of event to address.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Force trigger event 1.\par
+ \char`\"{}\-Cfg.\-Trigger\-Event(1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_ab826ec827ce0c393896ece563eea4b45}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!trigger\-Recorder@{trigger\-Recorder}}
+\index{trigger\-Recorder@{trigger\-Recorder}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{trigger\-Recorder}]{\setlength{\rightskip}{0pt plus 5cm}int trigger\-Recorder (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Recorder}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_ab826ec827ce0c393896ece563eea4b45}
+
+
+Force trigger recorder.\par
+. 
+
+The recorder object will store data in the linked data storage object.\par
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Recorder} & Index of recorder to address.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Force trigger recorder 1.\par
+ \char`\"{}\-Cfg.\-Trigger\-Recorder(1)\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
+\hypertarget{ecmcMisc_8h_a2d81085a4c027467963e26281c33667c}{\index{ecmc\-Misc.\-h@{ecmc\-Misc.\-h}!write\-Storage\-Buffer@{write\-Storage\-Buffer}}
+\index{write\-Storage\-Buffer@{write\-Storage\-Buffer}!ecmcMisc.h@{ecmc\-Misc.\-h}}
+\subsubsection[{write\-Storage\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}int write\-Storage\-Buffer (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-Storage, }
+\item[{double $\ast$}]{data, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{ecmcMisc_8h_a2d81085a4c027467963e26281c33667c}
+
+
+Writes data to storage buffer.\par
+. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index\-Storage} & Index of data storage object to address.\par
+\\
+\hline
+\mbox{\tt in}  & {\em data} & Pointer to data.\par
+\\
+\hline
+\mbox{\tt in}  & {\em size} & Number of data elements to write.\par
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if success or otherwise an error code.\par
+ 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Example\-: Write contents of data storage object 3 .\par
+ \char`\"{}\-Write\-Data\-Storage(3)=0,0,0,0,0,0....\char`\"{} //\-Command string to ecmc\-Cmd\-Parser.\-c\par
+
+\end{DoxyNote}
